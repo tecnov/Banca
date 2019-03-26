@@ -26,3 +26,4 @@ public class Amministratore {
         this.password = password;
     }
 }
+//piselone
