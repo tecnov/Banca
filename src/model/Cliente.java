@@ -7,15 +7,14 @@ public class Cliente {
     private String email;
     private String username;
     private String password;
-    private ContoCorrente contoCorrente;
+    //  TODO private ContoCorrente contoCorrente;
 
-    public Cliente(String nome, String cognome, String email, String username, String password, ContoCorrente contoCorrente) {
+    public Cliente(String nome, String cognome, String email, String username, String password) {
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
         this.username = username;
         this.password = password;
-        this.contoCorrente = contoCorrente;
     }
 
     public String getNome() {
@@ -58,11 +57,11 @@ public class Cliente {
         this.password = password;
     }
 
-    public ContoCorrente getContoCorrente() {
+ /*   public ContoCorrente getContoCorrente() {
         return contoCorrente;
     }
 
     public void setContoCorrente(ContoCorrente contoCorrente) {
         this.contoCorrente = contoCorrente;
-    }
+    } */
 }
