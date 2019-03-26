@@ -1,6 +1,6 @@
 package it.homebank.sportello.model;
 
-public class Cliente {
+public class Persona {
 
     private String nome;
     private String cognome;
@@ -9,7 +9,7 @@ public class Cliente {
     private String password;
     //  TODO private ContoCorrente contoCorrente;
 
-    public Cliente(String nome, String cognome, String email, String username, String password) {
+    public Persona(String nome, String cognome, String email, String username, String password) {
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
