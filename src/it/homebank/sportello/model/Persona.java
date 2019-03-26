@@ -9,6 +9,10 @@ public class Persona {
     private String password;
     //  TODO private ContoCorrente contoCorrente;
 
+    public Persona(){
+
+    }
+
     public Persona(String nome, String cognome, String email, String username, String password) {
         this.nome = nome;
         this.cognome = cognome;

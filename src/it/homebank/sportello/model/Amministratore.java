@@ -1,29 +1,26 @@
 package it.homebank.sportello.model;
 
-public class Amministratore {
+public class Amministratore extends Persona {
+    private int idAmministratore;
 
-    private String username;
-    private String password;
+    public Amministratore() {
 
-    public Amministratore(String username, String password) {
-        this.username = username;
-        this.password = password;
     }
 
-    public String getUsername() {
-        return username;
+    public Amministratore(int idAmministratore) {
+        this.idAmministratore = idAmministratore;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public Amministratore(String nome, String cognome, String email, String username, String password, int idAmministratore) {
+        super(nome, cognome, email, username, password);
+        this.idAmministratore = idAmministratore;
     }
 
-    public String getPassword() {
-        return password;
+    public int getIdAmministratore() {
+        return idAmministratore;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setIdAmministratore(int idAmministratore) {
+        this.idAmministratore = idAmministratore;
     }
 }
-//piselone
