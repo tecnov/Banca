@@ -1,11 +1,11 @@
 package it.homebank.sportello.model;
 
-public class Direttore {
+public class Direttore extends Utente {
+    int idDirettore;
+    int
 
-    private String nome;
-    private String cognome;
-    private String email;
-    private String username;
-    private String password;
-    private String descrizione;
+
+    public Direttore(int idUtente, String nome, String cognome, String email, String username, String password) {
+        super(idUtente, nome, cognome, email, username, password);
+    }
 }
