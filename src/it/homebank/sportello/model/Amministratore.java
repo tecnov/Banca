@@ -1,6 +1,6 @@
 package it.homebank.sportello.model;
 
-public class Amministratore extends Persona {
+public class Amministratore extends Utente {
     private int idAmministratore;
 
     public Amministratore() {

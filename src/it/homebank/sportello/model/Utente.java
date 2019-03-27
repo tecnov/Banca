@@ -1,24 +1,32 @@
 package it.homebank.sportello.model;
 
-public class Persona {
+public class Utente {
 
+    private int idUtente;
     private String nome;
     private String cognome;
     private String email;
     private String username;
     private String password;
-    //  TODO private ContoCorrente contoCorrente;
 
-    public Persona(){
+    public Utente(){
 
     }
 
-    public Persona(String nome, String cognome, String email, String username, String password) {
+    public Utente(int idUtente, String nome, String cognome, String email, String username, String password) {
         this.nome = nome;
         this.cognome = cognome;
         this.email = email;
         this.username = username;
         this.password = password;
+    }
+
+    public int getIdUtente() {
+        return idUtente;
+    }
+
+    public void setIdUtente(int idUtente) {
+        this.idUtente = idUtente;
     }
 
     public String getNome() {
@@ -61,11 +69,4 @@ public class Persona {
         this.password = password;
     }
 
- /*   public ContoCorrente getContoCorrente() {
-        return contoCorrente;
-    }
-
-    public void setContoCorrente(ContoCorrente contoCorrente) {
-        this.contoCorrente = contoCorrente;
-    } gnagna */
 }
