@@ -1,5 +1,7 @@
 package it.homebank.sportello.model;
 
+import it.homebank.sportello.DAO.UtenteDAO;
+
 public class Utente {
 
     private int idUtente;
@@ -9,7 +11,7 @@ public class Utente {
     private String username;
     private String password;
 
-    public Utente(String nome, String cognome, String email, String username, String password){
+    public Utente(){
 
     }
 
@@ -67,6 +69,15 @@ public class Utente {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+
+
+
+
+    public Utente login ( String username, String password) {
+        UtenteDAO sDAO = new UtenteDAO();
+        return sDAO.login(username,password);
     }
 
 }
