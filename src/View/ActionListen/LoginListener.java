@@ -27,11 +27,11 @@ public class LoginListener implements ActionListener {
             String username = frame.getLoginPnl().getTextUser().getText();
             String password = frame.getLoginPnl().getTextPassword().getText();
             loginbusiness l = new loginbusiness();
-            if( l.login(username,password).equals(null))
-                JOptionPane.showMessageDialog(null, "Registrati troia");
+                if (l.login(username, password).equals(null))
+                    JOptionPane.showMessageDialog(null, "Registrati");
                 else {
-
-            }
+                    JOptionPane.showMessageDialog(null, "Vaffanculo");
+                }
         }
     }
 }

@@ -11,7 +11,7 @@ public class UtenteDAO {
 
     private static UtenteDAO instance;
     public static synchronized UtenteDAO getInstance() {
-        if(instance == null)
+        if(instance == null)    
             instance = new UtenteDAO();
         return instance;
     }
@@ -41,18 +41,18 @@ public class UtenteDAO {
 
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM utente WHERE username='"+username+"' AND password='"+password+"'");
 
-        if(result.size() == 0) return null;
+        if(result == null) return null;
 
         Utente s = new Utente();
         String[] riga = result.get(0);
         s.setIdUtente(Integer.parseInt(riga[0]));
         s.setUsername(riga[1]);
         s.setPassword(riga[2]);
-        s.setNome(riga[3]);
-        s.setCognome(riga[4]);
-        s.setEmail(riga[5]);
-        s.setUsername(riga[6]);
-        s.setPassword(riga[7]);
+       // s.setNome(riga[3]);
+       // s.setCognome(riga[4]);
+        //s.setEmail(riga[5]);
+       //s.setUsername(riga[6]);
+       // s.setPassword(riga[7]);
         return s;
     }
 }
