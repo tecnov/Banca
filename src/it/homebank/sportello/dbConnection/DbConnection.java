@@ -19,7 +19,7 @@ public class DbConnection {
         if(instance == null)
             instance = new DbConnection();
         if(connesso != true)
-            connetti("db_Banca", "root", ""); //TODO: CAMBIARE NOME AL DB
+            connetti("db_banca", "root", "");
         return instance;
     }
 
@@ -30,8 +30,9 @@ public class DbConnection {
         try {
 
             // Carico il driver JDBC per la connessione con il database MySQL
-            Class.forName("com.mysql.jdbc.Driver");
-            db = DriverManager.getConnection("jdbc:mysql://127.0.0.1/" + nomeDB + "?user=" + nomeUtente + "&password=" + pwdUtente);
+            //Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            db = DriverManager.getConnection("jdbc:mysql://127.0.0.1/" + nomeDB + "?user=" + nomeUtente + "&password=" + pwdUtente+"&useLegacyDatetimeCode=false&serverTimezone=UTC");
             connesso=true;
 
         } catch (Exception e) {
