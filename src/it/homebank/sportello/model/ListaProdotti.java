@@ -11,7 +11,7 @@ public class ListaProdotti {
 
     public int getIdProdotto() {
         return idProdotto;
-    }//dada
+    }
 
     public void setIdProdotto(int idProdotto) {
         this.idProdotto = idProdotto;
