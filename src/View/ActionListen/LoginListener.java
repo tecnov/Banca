@@ -28,7 +28,7 @@ public class LoginListener implements ActionListener {
 
         String sorgenteEvento = e.getActionCommand();
 
-        if (sorgenteEvento.equals(LOGIN)) {
+        if(sorgenteEvento.equals(LOGIN)) {
             String username = frame.getLoginPnl().getTextUser().getText();
             String password = frame.getLoginPnl().getTextPassword().getText();
             loginbusiness l = new loginbusiness();
