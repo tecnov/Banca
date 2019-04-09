@@ -7,6 +7,7 @@ import javax.swing.*;
 
 public class utentePanel {
     private JPanel panel1;
+    int i; /* da cancellare */
     private JLabel Welcometxt;
     private Utente utente = new Utente();
     private void createUIComponents() {
