@@ -17,8 +17,9 @@ public class Frame extends JFrame {
     JPanel nordPnl = new JPanel();
     JPanel centroPnl = new JPanel();
     JPanel sudPnl = new JPanel();
+    JPanel eastPnl = new JPanel();
+    JPanel westPnl = new JPanel();
     JFrame view = new JFrame();
-
 
 
     public Frame() {
@@ -36,12 +37,11 @@ public class Frame extends JFrame {
         rootPanel.add(centroPnl, BorderLayout.CENTER);
         rootPanel.add(sudPnl, BorderLayout.SOUTH);
         rootPanel.add(nordPnl, BorderLayout.NORTH);
+        rootPanel.add(eastPnl, BorderLayout.EAST);
+        rootPanel.add(westPnl, BorderLayout.WEST);
         view.setContentPane(rootPanel);
         view.setVisible(true);
         view.pack();
-
-
-
 
 
 
@@ -52,7 +52,8 @@ public class Frame extends JFrame {
 
         loginPnl.getConfermaButton().addActionListener(login);
         loginPnl.getConfermaButton().setActionCommand(login.LOGIN);
-
+        loginPnl.getRegistratiButton().addActionListener(login);
+        loginPnl.getRegistratiButton().setActionCommand(login.REGISTER);
     }
 
 

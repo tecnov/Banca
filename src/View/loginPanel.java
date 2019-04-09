@@ -7,6 +7,8 @@ public class loginPanel {
     private JTextField textUser;
     private JTextField textPassword;
     private JButton confermaButton;
+    private JButton registratiButton;
+
 
 
     public loginPanel() {
@@ -46,5 +48,13 @@ public class loginPanel {
 
     public void setConfermaButton(JButton confermaButton) {
         this.confermaButton = confermaButton;
+    }
+
+    public JButton getRegistratiButton() {
+        return registratiButton;
+    }
+
+    public void setRegistratiButton(JButton registratiButton) {
+        this.registratiButton = registratiButton;
     }
 }

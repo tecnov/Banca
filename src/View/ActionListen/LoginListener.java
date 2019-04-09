@@ -16,22 +16,37 @@ public class LoginListener implements ActionListener {
 
 
     public final static String LOGIN = "Conferma loginbusiness";
-    public final static String BACK = "Torna indietro";
-
+    //public final static String BACK = "Torna indietro";
+    public final static String REGISTER = "Registra utente";
     @Override
     public void actionPerformed(ActionEvent e) {
 
         String sorgenteEvento = e.getActionCommand();
 
-        if(sorgenteEvento.equals(LOGIN)) {
+        if (sorgenteEvento.equals(LOGIN)) {
             String username = frame.getLoginPnl().getTextUser().getText();
             String password = frame.getLoginPnl().getTextPassword().getText();
             loginbusiness l = new loginbusiness();
-                if (l.login(username, password).equals(null))
-                    JOptionPane.showMessageDialog(null, "Registrati");
-                else {
-                    JOptionPane.showMessageDialog(null, "Vaffanculo");
-                }
+            if (l.login(username, password).equals(null))
+                JOptionPane.showMessageDialog(null, "Registrati");
+            else {
+                JOptionPane.showMessageDialog(null, "Benvenuto");
+            }
+
+        }
+
+        if(sorgenteEvento.equals(REGISTER)) {
+            String nome = frame.getName();
+        }
+
+       /* if (sorgenteEvento.equals(BACK)) {
+            String username = frame.getLoginPnl().getTextUser().getText();
+
+            if (username.equals("Davide"))
+                JOptionPane.showMessageDialog(null, "");
+            else {
+                JOptionPane.showMessageDialog(null, "Benvenuto");
+            }*/
+
         }
     }
-}
