@@ -5,24 +5,22 @@ import it.homebank.sportello.model.Utente;
 
 import javax.swing.*;
 
-public class utentePanel {
-    private JPanel panel1;
-    int i; /* da cancellare */
+public class UtentePanel {
+    private JPanel utentePnl;
     private JLabel Welcometxt;
     private Utente utente = new Utente();
-    private void createUIComponents() {
 
-
-        panel1.getUI();
+    public UtentePanel() {
+        utentePnl.getUI();
         Welcometxt.setText("Benvenuto " + utente.getNome() + utente.getCognome());
     }
 
-    public JPanel getPanel1() {
-        return panel1;
+    public JPanel getUtentePnl() {
+        return utentePnl;
     }
 
     public void setPanel1(JPanel panel1) {
-        this.panel1 = panel1;
+        this.utentePnl = panel1;
     }
 
     public JLabel getWelcometxt() {

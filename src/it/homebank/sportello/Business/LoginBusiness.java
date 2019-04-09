@@ -4,7 +4,7 @@ import it.homebank.sportello.model.Utente;
 
 import javax.swing.*;
 
-public class loginbusiness {
+public class LoginBusiness {
 
 
     public Utente login(String  username, String  password) {

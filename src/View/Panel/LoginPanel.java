@@ -2,25 +2,21 @@ package View.Panel;
 
 import javax.swing.*;
 
-public class loginPanel {
-    private JPanel loginPanel;
-    private JTextField textUser;
-    private JTextField textPassword;
-    private JButton confermaButton;
-    private JButton registratiButton;
+public class LoginPanel {
+    public JPanel loginPanel;
+    public JTextField textPassword;
+    public JTextField textUser;
+    public JButton confermaButton;
+    public JButton registratiButton;
 
 
 
-    public loginPanel() {
+    public LoginPanel() {
         loginPanel.getUI();
         loginPanel.setVisible(true);
     }
 
     public JPanel getloginPanel() {
-        return loginPanel;
-    }
-
-    public JPanel getLoginPanel() {
         return loginPanel;
     }
 

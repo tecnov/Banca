@@ -1,15 +1,18 @@
 package View;
 
 import View.ActionListen.LoginListener;
-import View.Panel.loginPanel;
+import View.ActionListen.RegistrationListener;
+import View.Panel.LoginPanel;
+import View.Panel.RegistrationPanel;
+import it.homebank.sportello.Business.LoginBusiness;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Frame extends JFrame {
 
-    loginPanel loginPnl = new loginPanel();
-
+    LoginPanel loginPnl = new LoginPanel();
+    RegistrationPanel registrationPnl = new RegistrationPanel();
 
     /**
      * Serve a costruire l'interfaccia
@@ -33,6 +36,7 @@ public class Frame extends JFrame {
         //TODO aggiungere tutti i pannelli
 
         centroPnl.add(loginPnl.getloginPanel());
+        centroPnl.add(registrationPnl.getRegistrationPanel());
 
 
 
@@ -53,12 +57,13 @@ public class Frame extends JFrame {
 
         //TODO Action Listener
 
-        LoginListener login = new LoginListener(this);
+        LoginListener loginListener = new LoginListener(this);
+        RegistrationListener registrationListener = new RegistrationListener(this);
 
-        loginPnl.getConfermaButton().addActionListener(login);
-        loginPnl.getConfermaButton().setActionCommand(login.LOGIN);
-        loginPnl.getRegistratiButton().addActionListener(login);
-        loginPnl.getRegistratiButton().setActionCommand(login.REGISTER);
+        loginPnl.getConfermaButton().addActionListener(loginListener);
+        loginPnl.getConfermaButton().setActionCommand(loginListener.LOGIN);
+        loginPnl.getRegistratiButton().addActionListener(loginListener);
+        loginPnl.getRegistratiButton().setActionCommand(loginListener.REGISTER);
     }
 
 
@@ -68,8 +73,11 @@ public class Frame extends JFrame {
         return centroPnl;
     }
 
-    public loginPanel getLoginPnl() {
+    public LoginPanel getLoginPnl() {
         return loginPnl;
+    }
+    public RegistrationPanel getRegistrationPnl() {
+        return registrationPnl;
     }
 
     public void show() {
