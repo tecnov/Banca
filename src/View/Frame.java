@@ -1,6 +1,7 @@
 package View;
 
 import View.ActionListen.LoginListener;
+import View.Panel.loginPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -52,7 +53,8 @@ public class Frame extends JFrame {
 
         loginPnl.getConfermaButton().addActionListener(login);
         loginPnl.getConfermaButton().setActionCommand(login.LOGIN);
-
+        loginPnl.getIndietroButton().addActionListener(login);
+        loginPnl.getIndietroButton().setActionCommand(login.BACK);
     }
 
 

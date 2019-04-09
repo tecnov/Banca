@@ -1,4 +1,4 @@
-package View;
+package View.Panel;
 
 import javax.swing.*;
 
@@ -7,6 +7,7 @@ public class loginPanel {
     private JTextField textUser;
     private JTextField textPassword;
     private JButton confermaButton;
+    private JButton indietroButton;
 
 
     public loginPanel() {
@@ -14,7 +15,9 @@ public class loginPanel {
         loginPanel.setVisible(true);
     }
 
-    public JPanel getloginPanel() {return loginPanel;}
+    public JPanel getloginPanel() {
+        return loginPanel;
+    }
 
     public JPanel getLoginPanel() {
         return loginPanel;
@@ -46,5 +49,13 @@ public class loginPanel {
 
     public void setConfermaButton(JButton confermaButton) {
         this.confermaButton = confermaButton;
+    }
+
+    public JButton getIndietroButton() {
+        return indietroButton;
+    }
+
+    public void setIndietroButton(JButton indietroButton) {
+        this.indietroButton = indietroButton;
     }
 }
