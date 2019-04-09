@@ -1,6 +1,7 @@
 package View;
 
 import View.ActionListen.LoginListener;
+import View.Panel.loginPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,6 +21,7 @@ public class Frame extends JFrame {
     JPanel eastPnl = new JPanel();
     JPanel westPnl = new JPanel();
     JFrame view = new JFrame();
+
 
 
     public Frame() {
@@ -42,6 +44,9 @@ public class Frame extends JFrame {
         view.setContentPane(rootPanel);
         view.setVisible(true);
         view.pack();
+
+
+
 
 
 

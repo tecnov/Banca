@@ -1,4 +1,4 @@
-package View;
+package View.Panel;
 
 import javax.swing.*;
 
@@ -16,7 +16,9 @@ public class loginPanel {
         loginPanel.setVisible(true);
     }
 
-    public JPanel getloginPanel() {return loginPanel;}
+    public JPanel getloginPanel() {
+        return loginPanel;
+    }
 
     public JPanel getLoginPanel() {
         return loginPanel;
