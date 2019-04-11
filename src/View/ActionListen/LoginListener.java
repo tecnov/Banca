@@ -54,10 +54,7 @@ public class LoginListener implements ActionListener {
         }
 
         if(sorgenteEvento.equals(REGISTER)) {
-            JOptionPane.showMessageDialog(null,"HAI PREMUTO REGISTRATI!");
-
-            loginPanel.getloginPanel().setVisible(true);
-
+            JOptionPane.showMessageDialog(null,"è pregato di inserire i suoi dati");
             frame.getLoginPnl().getloginPanel().setVisible(false);
             frame.getRegistrationPnl().getRegistrationPanel().setVisible(true);
         }

@@ -7,7 +7,7 @@ public class RegistrationPanel {
     private JTextField textUser;
     private JTextField textPassword;
     private JButton confermaButton;
-    private JTextField textField1;
+    private JTextField textName;
 
     public RegistrationPanel() {
         registrationPanel.getUI();
@@ -44,5 +44,13 @@ public class RegistrationPanel {
 
     public void setConfermaButton(JButton confermaButton) {
         this.confermaButton = confermaButton;
+    }
+
+    public JTextField getTextName() {
+        return textName;
+    }
+
+    public void setTextName(JTextField textName) {
+        this.textName = textName;
     }
 }
