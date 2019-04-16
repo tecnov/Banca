@@ -1,23 +1,23 @@
 package it.homebank.sportello.Business;
 
-import it.homebank.sportello.model.Cliente;
 import it.homebank.sportello.model.Utente;
 
 import javax.swing.*;
 
 public class RegistrationBusiness {
 
-    public Cliente registrationCliente (String name, String surname, String username, String password, String email ){
+    public Utente registrationUtente (String name, String surname, String username, String password, String email, int tipo ){
 
-        Cliente tmpRegistrationCliente = new Cliente();
+        Utente tmpRegistrationUtente = new Utente();
 
-        tmpRegistrationCliente.setNome(name);
-        tmpRegistrationCliente.setCognome(surname);
-        tmpRegistrationCliente.setUsername(username);
-        tmpRegistrationCliente.setPassword(password);
-        tmpRegistrationCliente.setEmail(email);
+        tmpRegistrationUtente.setNome(name);
+        tmpRegistrationUtente.setCognome(surname);
+        tmpRegistrationUtente.setUsername(username);
+        tmpRegistrationUtente.setPassword(password);
+        tmpRegistrationUtente.setEmail(email);
+        tmpRegistrationUtente.setTipo(tipo);
         JOptionPane.showMessageDialog(null,"La registrazione è avvenuta con successo");
-        return (tmpRegistrationCliente);
+        return (tmpRegistrationUtente);
     }
 
 }

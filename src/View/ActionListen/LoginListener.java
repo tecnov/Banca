@@ -4,6 +4,9 @@ import View.Frame;
 import View.Panel.LoginPanel;
 import View.Panel.RegistrationPanel;
 import View.Panel.UtentePanel;
+import View.Panel.RegistrationPanel;
+
+
 import it.homebank.sportello.Business.LoginBusiness;
 
 import javax.swing.*;
@@ -16,6 +19,7 @@ public class LoginListener implements ActionListener {
 
 
     private Frame frame;
+
     public UtentePanel utentepanel = new UtentePanel();
     public LoginPanel loginPanel = new LoginPanel();
     public RegistrationPanel registrationPanel = new RegistrationPanel();
@@ -23,6 +27,7 @@ public class LoginListener implements ActionListener {
     public LoginListener(Frame frame) {
         this.frame = frame;
     }
+
 
 
     public final static String LOGIN = "ConfermaLogin";
@@ -38,6 +43,7 @@ public class LoginListener implements ActionListener {
             String username = frame.getLoginPnl().getTextUser().getText();
             String password = frame.getLoginPnl().getTextPassword().getText();
             LoginBusiness l = new LoginBusiness();
+
             if (l.login(username, password).equals(null))
                 JOptionPane.showMessageDialog(null, "Registrati");
             else {
@@ -45,6 +51,7 @@ public class LoginListener implements ActionListener {
                 loginPanel.getloginPanel().setVisible(false);
                 utentepanel.getUtentePnl().setVisible(true);
             }
+
             if (l.login(username, password).equals(null))
                 JOptionPane.showMessageDialog(null, "Registrati");
             else {
@@ -59,14 +66,6 @@ public class LoginListener implements ActionListener {
             frame.getRegistrationPnl().getRegistrationPanel().setVisible(true);
         }
 
-       /* if (sorgenteEvento.equals(BACK)) {
-            String username = frame.getLoginPnl().getTextUser().getText();
-
-            if (username.equals("Davide"))
-                JOptionPane.showMessageDialog(null, "");
-            else {
-                JOptionPane.showMessageDialog(null, "Benvenuto");
-            }*/
-
-        }
     }
+
+}

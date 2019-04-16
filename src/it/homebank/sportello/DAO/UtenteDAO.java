@@ -31,8 +31,7 @@ public class UtenteDAO {
             s.setNome(riga[3]);
             s.setCognome(riga[4]);
             s.setEmail(riga[5]);
-            s.setUsername(riga[6]);
-            s.setPassword(riga[7]);
+            s.setTipo(Integer.parseInt(riga[6]));
             registrato.add(s);}
         return registrato;
     }
@@ -50,9 +49,16 @@ public class UtenteDAO {
         s.setPassword(riga[2]);
        // s.setNome(riga[3]);
        // s.setCognome(riga[4]);
-        //s.setEmail(riga[5]);
-       //s.setUsername(riga[6]);
-       // s.setPassword(riga[7]);
+       // s.setEmail(riga[5]);
+       // s.setTipo(riga[6]);
         return s;
+    }
+
+    public boolean create( Utente utente){
+
+        String sql = "INSERT INTO 'utente' ('username', 'password', 'nome', 'cognome', 'email', 'tipo' VALUES ( '"+ utente.getUsername() +"', '"+ utente.getPassword() +"', '"+utente.getNome().replaceAll("'","`")+"', '"+utente.getCognome().replaceAll("'","`")+"', '"+utente.getEmail()+"', '"+utente.getFilialeutente()+"')";
+
+        DbConnection.getInstance().eseguiAggiornamento(sql);
+    // TODO
     }
 }

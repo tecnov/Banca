@@ -1,6 +1,5 @@
 package View.Panel;
 
-import it.homebank.sportello.model.Cliente;
 import it.homebank.sportello.model.Utente;
 
 import javax.swing.*;
@@ -12,7 +11,7 @@ public class UtentePanel {
 
     public UtentePanel() {
         utentePnl.getUI();
-        Welcometxt.setText("Benvenuto " + utente.getNome() + utente.getCognome());
+        Welcometxt.setText("Benvenuto " + utente.getNome() + utente.getCognome()); //TODO questo va nel listner forse
     }
 
     public JPanel getUtentePnl() {

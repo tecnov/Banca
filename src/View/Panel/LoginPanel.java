@@ -13,7 +13,7 @@ public class LoginPanel {
 
     public LoginPanel() {
         loginPanel.getUI();
-        loginPanel.setVisible(true);
+        loginPanel.setVisible(false);
     }
 
     public JPanel getloginPanel() {

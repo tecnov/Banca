@@ -5,11 +5,14 @@ import it.homebank.sportello.DAO.UtenteDAO;
 public class Utente {
 
     private int idUtente;
+    private String username;
+    private String password;
     private String nome;
     private String cognome;
     private String email;
-    private String username;
-    private String password;
+    private int tipo;
+    Filiale filialeutente;
+
 
     public Utente(){
 
@@ -71,6 +74,21 @@ public class Utente {
         this.password = password;
     }
 
+    public int getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(int tipo) {
+        this.tipo = tipo;
+    }
+
+    public Filiale getFilialeutente() {
+        return filialeutente;
+    }
+
+    public void setFilialeutente(Filiale filialeutente) {
+        this.filialeutente = filialeutente;
+    }
 
 
 

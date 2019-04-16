@@ -2,9 +2,10 @@ package View;
 
 import View.ActionListen.LoginListener;
 import View.ActionListen.RegistrationListener;
+import View.ActionListen.TestListener;
 import View.Panel.LoginPanel;
 import View.Panel.RegistrationPanel;
-import it.homebank.sportello.Business.LoginBusiness;
+import View.Panel.TestPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,6 +14,7 @@ public class Frame extends JFrame {
 
     LoginPanel loginPnl = new LoginPanel();
     RegistrationPanel registrationPnl = new RegistrationPanel();
+    TestPanel testPnl = new TestPanel();
 
     /**
      * Serve a costruire l'interfaccia
@@ -37,7 +39,7 @@ public class Frame extends JFrame {
 
         centroPnl.add(loginPnl.getloginPanel());
         centroPnl.add(registrationPnl.getRegistrationPanel());
-
+        centroPnl.add(testPnl.getTestPanel());
 
 
         rootPanel.add(centroPnl, BorderLayout.CENTER);
@@ -59,11 +61,14 @@ public class Frame extends JFrame {
 
         LoginListener loginListener = new LoginListener(this);
         RegistrationListener registrationListener = new RegistrationListener(this);
+        TestListener testListener = new TestListener(this);
 
         loginPnl.getConfermaButton().addActionListener(loginListener);
         loginPnl.getConfermaButton().setActionCommand(loginListener.LOGIN);
         loginPnl.getRegistratiButton().addActionListener(loginListener);
         loginPnl.getRegistratiButton().setActionCommand(loginListener.REGISTER);
+        testPnl.getTestButton().addActionListener(testListener);
+        testPnl.getTestButton().setActionCommand(testListener.TEST);
     }
 
 
