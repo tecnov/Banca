@@ -1,16 +1,18 @@
 package View;
 
-import View.ActionListen.LoginListener;
-import View.ActionListen.RegistrationListener;
+import View.ActionListener.HomeListener;
+import View.ActionListener.LoginListener;
+import View.ActionListener.RegistrationListener;
+import View.Panel.HomePanel;
 import View.Panel.LoginPanel;
 import View.Panel.RegistrationPanel;
-import it.homebank.sportello.Business.LoginBusiness;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Frame extends JFrame {
 
+    HomePanel homePnl = new HomePanel();
     LoginPanel loginPnl = new LoginPanel();
     RegistrationPanel registrationPnl = new RegistrationPanel();
 
@@ -20,9 +22,8 @@ public class Frame extends JFrame {
     JPanel rootPanel = new JPanel();
     JPanel nordPnl = new JPanel();
     JPanel centroPnl = new JPanel();
-    JPanel sudPnl = new JPanel();
     JPanel eastPnl = new JPanel();
-    JPanel westPnl = new JPanel();
+    JPanel sudPnl = new JPanel();
     JFrame view = new JFrame();
 
 
@@ -37,6 +38,7 @@ public class Frame extends JFrame {
 
         centroPnl.add(loginPnl.getloginPanel());
         centroPnl.add(registrationPnl.getRegistrationPanel());
+        centroPnl.add(homePnl.getHomePnl());
 
 
 
@@ -44,7 +46,6 @@ public class Frame extends JFrame {
         rootPanel.add(sudPnl, BorderLayout.SOUTH);
         rootPanel.add(nordPnl, BorderLayout.NORTH);
         rootPanel.add(eastPnl, BorderLayout.EAST);
-        rootPanel.add(westPnl, BorderLayout.WEST);
         view.setContentPane(rootPanel);
         view.setVisible(true);
         view.pack();
@@ -59,11 +60,18 @@ public class Frame extends JFrame {
 
         LoginListener loginListener = new LoginListener(this);
         RegistrationListener registrationListener = new RegistrationListener(this);
-
+        HomeListener homeListener = new HomeListener(this);
         loginPnl.getConfermaButton().addActionListener(loginListener);
         loginPnl.getConfermaButton().setActionCommand(loginListener.LOGIN);
-        loginPnl.getRegistratiButton().addActionListener(loginListener);
-        loginPnl.getRegistratiButton().setActionCommand(loginListener.REGISTER);
+        loginPnl.getBackButton().addActionListener(loginListener);
+        loginPnl.getBackButton().setActionCommand(loginListener.BACK);
+        registrationPnl.getBackButton().addActionListener(registrationListener);
+        registrationPnl.getBackButton().setActionCommand(registrationListener.BACK);
+        homePnl.getRegistrationButton().addActionListener(homeListener);
+        homePnl.getRegistrationButton().setActionCommand(homeListener.REGISTER);
+        homePnl.getLoginButton().addActionListener(homeListener);
+        homePnl.getLoginButton().setActionCommand(homeListener.LOGIN);
+
     }
 
 
@@ -82,5 +90,13 @@ public class Frame extends JFrame {
 
     public void show() {
         view.setVisible(true);
+    }
+
+    public HomePanel getHomePnl() {
+        return homePnl;
+    }
+
+    public void setHomePnl(HomePanel homePnl) {
+        this.homePnl = homePnl;
     }
 }

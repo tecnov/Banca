@@ -7,13 +7,12 @@ public class LoginPanel {
     public JTextField textPassword;
     public JTextField textUser;
     public JButton confermaButton;
-    public JButton registratiButton;
-
+    public JButton backButton;
 
 
     public LoginPanel() {
         loginPanel.getUI();
-        loginPanel.setVisible(true);
+        loginPanel.setVisible(false);
     }
 
     public JPanel getloginPanel() {
@@ -48,11 +47,15 @@ public class LoginPanel {
         this.confermaButton = confermaButton;
     }
 
-    public JButton getRegistratiButton() {
-        return registratiButton;
+    public JPanel getLoginPanel() {
+        return loginPanel;
     }
 
-    public void setRegistratiButton(JButton registratiButton) {
-        this.registratiButton = registratiButton;
+    public JButton getBackButton() {
+        return backButton;
+    }
+
+    public void setBackButton(JButton backButton) {
+        this.backButton = backButton;
     }
 }

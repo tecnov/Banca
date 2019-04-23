@@ -1,11 +1,9 @@
-package View.ActionListen;
+package View.ActionListener;
 
 import View.Frame;
 import View.Panel.LoginPanel;
-import View.Panel.RegistrationPanel;
 import View.Panel.UtentePanel;
 import it.homebank.sportello.Business.LoginBusiness;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,7 +16,7 @@ public class LoginListener implements ActionListener {
     private Frame frame;
     public UtentePanel utentepanel = new UtentePanel();
     public LoginPanel loginPanel = new LoginPanel();
-    public RegistrationPanel registrationPanel = new RegistrationPanel();
+
 
     public LoginListener(Frame frame) {
         this.frame = frame;
@@ -26,8 +24,7 @@ public class LoginListener implements ActionListener {
 
 
     public final static String LOGIN = "ConfermaLogin";
-    //public final static String BACK = "Torna indietro";
-    public final static String REGISTER = "Registra";
+    public final static String BACK = "Torna indietro";
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -53,20 +50,14 @@ public class LoginListener implements ActionListener {
 
         }
 
-        if(sorgenteEvento.equals(REGISTER)) {
-            JOptionPane.showMessageDialog(null,"è pregato di inserire i suoi dati");
-            frame.getLoginPnl().getloginPanel().setVisible(false);
-            frame.getRegistrationPnl().getRegistrationPanel().setVisible(true);
-        }
 
-       /* if (sorgenteEvento.equals(BACK)) {
+        if (sorgenteEvento.equals(BACK)) {
             String username = frame.getLoginPnl().getTextUser().getText();
+            frame.getLoginPnl().getloginPanel().setVisible(false);
+            frame.getHomePnl().getHomePnl().setVisible(true);
 
-            if (username.equals("Davide"))
-                JOptionPane.showMessageDialog(null, "");
-            else {
-                JOptionPane.showMessageDialog(null, "Benvenuto");
-            }*/
+            }
 
         }
     }
+
