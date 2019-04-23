@@ -27,7 +27,6 @@ public class LoginListener implements ActionListener {
     }
 
 
-
     public final static String LOGIN = "ConfermaLogin";
     public final static String BACK = "Torna indietro";
 
@@ -63,7 +62,8 @@ public class LoginListener implements ActionListener {
             frame.getLoginPnl().getloginPanel().setVisible(false);
             frame.getHomePnl().getHomePnl().setVisible(true);
 
-            }
+        }
 
+    }
 }
 

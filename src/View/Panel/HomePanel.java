@@ -47,13 +47,13 @@ public class HomePanel {
     }
 
 
-  /*  public JPanel getHomePanel() {
+    public JPanel getHomePanel() {
         return homePanel;
     }
 
     public void setHomePanel(JPanel homePanel) {
         this.homePanel = homePanel;
-    }*/
+    }
 
     public JButton getLavoraConNoiButton() {
         return lavoraConNoiButton;

@@ -11,7 +11,7 @@ public class TestPanel {
 
     public TestPanel() {
         testPanel.getUI();
-        testPanel.setVisible(true);
+        testPanel.setVisible(false);
     }
 
 

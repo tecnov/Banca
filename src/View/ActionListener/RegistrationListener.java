@@ -35,7 +35,7 @@ public class RegistrationListener implements ActionListener {
              String password = frame.getRegistrationPnl().getTextName().getText();
              String email = frame.getRegistrationPnl().getTextName().getText();
 
-             registrationBusiness.registrationCliente("davide", "e", "coglione", "con", "ascella");
+             registrationBusiness.registrationUtente("davide", "e", "coglione", "con", "ascella", 1);
 
              JOptionPane.showMessageDialog(null, "Le abbiamo inviato un email di conferma");
         }

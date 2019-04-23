@@ -54,11 +54,11 @@ public class UtenteDAO {
         return s;
     }
 
-    public boolean create( Utente utente){
+   /* public boolean create( Utente utente){
 
         String sql = "INSERT INTO 'utente' ('username', 'password', 'nome', 'cognome', 'email', 'tipo' VALUES ( '"+ utente.getUsername() +"', '"+ utente.getPassword() +"', '"+utente.getNome().replaceAll("'","`")+"', '"+utente.getCognome().replaceAll("'","`")+"', '"+utente.getEmail()+"', '"+utente.getFilialeutente()+"')";
 
-        DbConnection.getInstance().eseguiAggiornamento(sql);
+  /*      DbConnection.getInstance().eseguiAggiornamento(sql);
     // TODO
-    }
+    }*/
 }

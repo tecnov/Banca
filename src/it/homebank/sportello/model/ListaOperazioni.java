@@ -3,13 +3,13 @@ package it.homebank.sportello.model;
 public class ListaOperazioni {
     private int idOperazione;
     private String data;
-    private Cliente mittente;
-    private Cliente beneficiario;
+    //private Cliente mittente;
+    //private Cliente beneficiario;
     private ListaServizi servizio;
     private ListaProdotti prodotto;
     private String dataOperazione;
     private boolean autorizzazione;
-    private Cassiere cassiere;
+    private Utente cassiere;
 
 
     public int getIdOperazione() {
@@ -28,7 +28,7 @@ public class ListaOperazioni {
         this.data = data;
     }
 
-    public Cliente getMittente() {
+   /* public Cliente getMittente() {
         return mittente;
     }
 
@@ -42,7 +42,7 @@ public class ListaOperazioni {
 
     public void setBeneficiario(Cliente beneficiario) {
         this.beneficiario = beneficiario;
-    }
+    }*/
 
     public ListaServizi getServizio() {
         return servizio;
@@ -76,11 +76,11 @@ public class ListaOperazioni {
         this.autorizzazione = autorizzazione;
     }
 
-    public Cassiere getCassiere() {
-        return cassiere;
+    /*public Cassiere getCassiere() {
+       return cassiere;
     }
 
     public void setCassiere(Cassiere cassiere) {
         this.cassiere = cassiere;
-    }
+    }*/
 }

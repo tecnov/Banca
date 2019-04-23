@@ -1,14 +1,15 @@
 package it.homebank.sportello.model;
 
 public class Filiale {
-    int idFiliale;
 
+    int idFiliale;
     String nome;
+    Banca banca;
+    Utente cassiere;
     String indirizzo;
     String orario;
     String collegamentofoto;
-    Banca Banca;
-    Cassiere Cassiere;
+
 
     public int getIdFiliale() {
         return idFiliale;
@@ -51,18 +52,18 @@ public class Filiale {
     }
 
     public it.homebank.sportello.model.Banca getBanca() {
-        return Banca;
+        return banca;
     }
 
     public void setBanca(it.homebank.sportello.model.Banca banca) {
-        Banca = banca;
+        this.banca = banca;
     }
 
-    public it.homebank.sportello.model.Cassiere getCassiere() {
-        return Cassiere;
+    public it.homebank.sportello.model.Utente getCassiere() {
+        return cassiere;
     }
 
-    public void setCassiere(it.homebank.sportello.model.Cassiere cassiere) {
-        Cassiere = cassiere;
+    public void setCassiere(it.homebank.sportello.model.Utente cassiere) {
+        this.cassiere = cassiere;
     }
 }

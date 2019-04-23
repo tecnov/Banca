@@ -3,10 +3,11 @@ package it.homebank.sportello.model;
 public class Banca {
     int idBanca;
     String nome;
+    Utente Direttore;
     String indirizzo;
     String descrizione;
     String fotoRappresentativa;
-    Direttore Direttore;
+
 
     public int getIdBanca() {
         return idBanca;
@@ -48,11 +49,11 @@ public class Banca {
         this.fotoRappresentativa = fotoRappresentativa;
     }
 
-    public it.homebank.sportello.model.Direttore getDirettore() {
+    public it.homebank.sportello.model.Utente getDirettore() {
         return Direttore;
     }
 
-    public void setDirettore(it.homebank.sportello.model.Direttore direttore) {
+    public void setDirettore(it.homebank.sportello.model.Utente direttore) {
         Direttore = direttore;
     }
 }
