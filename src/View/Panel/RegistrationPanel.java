@@ -3,11 +3,15 @@ package View.Panel;
 import javax.swing.*;
 
 public class RegistrationPanel {
-    private JPanel registrationPanel;
-    private JTextField textUser;
-    private JTextField textPassword;
-    private JButton confermaButton;
-    private JTextField textName;
+    public JPanel registrationPanel;
+    public JTextField textUser;
+    public JTextField textPassword;
+    public JButton confermaButton;
+    public JButton backButton;
+    public JTextField textName;
+    JPanel nordPnl = new JPanel();
+    JPanel centerPnl = new JPanel();
+    JPanel southPnl = new JPanel();
 
     public RegistrationPanel() {
         registrationPanel.getUI();
@@ -52,5 +56,13 @@ public class RegistrationPanel {
 
     public void setTextName(JTextField textName) {
         this.textName = textName;
+    }
+
+    public JButton getBackButton() {
+        return backButton;
+    }
+
+    public void setBackButton(JButton backButton) {
+        this.backButton = backButton;
     }
 }

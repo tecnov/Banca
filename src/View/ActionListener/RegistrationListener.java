@@ -1,10 +1,8 @@
-package View.ActionListen;
+package View.ActionListener;
 import View.Frame;
-import View.Panel.RegistrationPanel;
 import it.homebank.sportello.Business.RegistrationBusiness;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,6 +14,7 @@ public class RegistrationListener implements ActionListener {
     }
     public final static String REGISTER = "Registra utente";
     public final static String COMPLETE = "Completa registrazione";
+    public final static String BACK = "Torna indietro";
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -40,6 +39,12 @@ public class RegistrationListener implements ActionListener {
 
              JOptionPane.showMessageDialog(null, "Le abbiamo inviato un email di conferma");
         }
+
+        if (sorgenteEvento.equals(BACK)) {
+            frame.getRegistrationPnl().getRegistrationPanel().setVisible(false);
+            frame.getHomePnl().getHomePnl().setVisible(true);
+        }
+
             }
         }
 
