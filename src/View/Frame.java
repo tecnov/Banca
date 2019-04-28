@@ -3,9 +3,7 @@ package View;
 import View.ActionListener.HomeListener;
 import View.ActionListener.LoginListener;
 import View.ActionListener.RegistrationListener;
-import View.Panel.HomePanel;
-import View.Panel.LoginPanel;
-import View.Panel.RegistrationPanel;
+import View.Panel.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +13,9 @@ public class Frame extends JFrame {
     HomePanel homePnl = new HomePanel();
     LoginPanel loginPnl = new LoginPanel();
     RegistrationPanel registrationPnl = new RegistrationPanel();
+    AdministratorPanel administratorPnl = new AdministratorPanel();
+    CashierPanel cashierPnl = new CashierPanel();
+    CustomerPanel customerPnl = new CustomerPanel();
 
     /**
      * Serve a costruire l'interfaccia
@@ -39,6 +40,9 @@ public class Frame extends JFrame {
         centroPnl.add(loginPnl.getloginPanel());
         centroPnl.add(registrationPnl.getRegistrationPanel());
         centroPnl.add(homePnl.getHomePnl());
+        centroPnl.add(administratorPnl.getAdministratorPanel());
+        centroPnl.add(cashierPnl.getCashierPanel());
+        centroPnl.add(cashierPnl.getCashierPanel());
 
 
 
@@ -98,5 +102,13 @@ public class Frame extends JFrame {
 
     public void setHomePnl(HomePanel homePnl) {
         this.homePnl = homePnl;
+    }
+
+    public AdministratorPanel getAdministratorPnl() {
+        return administratorPnl;
+    }
+
+    public void setAdministratorPnl(AdministratorPanel administratorPnl) {
+        this.administratorPnl = administratorPnl;
     }
 }
