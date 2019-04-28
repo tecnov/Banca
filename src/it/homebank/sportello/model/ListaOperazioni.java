@@ -2,15 +2,22 @@ package it.homebank.sportello.model;
 
 public class ListaOperazioni {
     private int idOperazione;
+    Utente cliente; /* il cliente che ha effettuato l'operaizone */
     private String data;
-    //private Cliente mittente;
-    //private Cliente beneficiario;
-    private ListaServizi servizio;
-    private ListaProdotti prodotto;
-    private String dataOperazione;
-    private boolean autorizzazione;
-    private Utente cassiere;
+    private Prodotto prodotto; /*il prodotto acquistato, può essere vuoto se ha fatto un passaggio di soldi */
+    private boolean autorizzazioneCassiere;
+    ServizioAcquistato Mittente; /*servizi tra i quali si è passato i soldi...*/
+    ServizioAcquistato Destinatario;/*...può essere vuoto se ha acquistato un prodotto*/
 
+    public ListaOperazioni(int idOperazione, Utente cliente, String data, Prodotto prodotto, boolean autorizzazioneCassiere, ServizioAcquistato mittente, ServizioAcquistato destinatario) {
+        this.idOperazione = idOperazione;
+        this.cliente = cliente;
+        this.data = data;
+        this.prodotto = prodotto;
+        this.autorizzazioneCassiere = autorizzazioneCassiere;
+        Mittente = mittente;
+        Destinatario = destinatario;
+    }
 
     public int getIdOperazione() {
         return idOperazione;
@@ -18,6 +25,14 @@ public class ListaOperazioni {
 
     public void setIdOperazione(int idOperazione) {
         this.idOperazione = idOperazione;
+    }
+
+    public Utente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Utente cliente) {
+        this.cliente = cliente;
     }
 
     public String getData() {
@@ -28,59 +43,35 @@ public class ListaOperazioni {
         this.data = data;
     }
 
-   /* public Cliente getMittente() {
-        return mittente;
-    }
-
-    public void setMittente(Cliente mittente) {
-        this.mittente = mittente;
-    }
-
-    public Cliente getBeneficiario() {
-        return beneficiario;
-    }
-
-    public void setBeneficiario(Cliente beneficiario) {
-        this.beneficiario = beneficiario;
-    }*/
-
-    public ListaServizi getServizio() {
-        return servizio;
-    }
-
-    public void setServizio(ListaServizi servizio) {
-        this.servizio = servizio;
-    }
-
-    public ListaProdotti getProdotto() {
+    public Prodotto getProdotto() {
         return prodotto;
     }
 
-    public void setProdotto(ListaProdotti prodotto) {
+    public void setProdotto(Prodotto prodotto) {
         this.prodotto = prodotto;
     }
 
-    public String getDataOperazione() {
-        return dataOperazione;
+    public boolean isAutorizzazioneCassiere() {
+        return autorizzazioneCassiere;
     }
 
-    public void setDataOperazione(String dataOperazione) {
-        this.dataOperazione = dataOperazione;
+    public void setAutorizzazioneCassiere(boolean autorizzazioneCassiere) {
+        this.autorizzazioneCassiere = autorizzazioneCassiere;
     }
 
-    public boolean isAutorizzazione() {
-        return autorizzazione;
+    public ServizioAcquistato getMittente() {
+        return Mittente;
     }
 
-    public void setAutorizzazione(boolean autorizzazione) {
-        this.autorizzazione = autorizzazione;
+    public void setMittente(ServizioAcquistato mittente) {
+        Mittente = mittente;
     }
 
-    /*public Cassiere getCassiere() {
-       return cassiere;
+    public ServizioAcquistato getDestinatario() {
+        return Destinatario;
     }
 
-    public void setCassiere(Cassiere cassiere) {
-        this.cassiere = cassiere;
-    }*/
+    public void setDestinatario(ServizioAcquistato destinatario) {
+        Destinatario = destinatario;
+    }
 }

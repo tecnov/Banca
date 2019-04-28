@@ -4,12 +4,21 @@ public class Filiale {
 
     int idFiliale;
     String nome;
-    Banca banca;
-    Utente cassiere;
+    Banca banca; /*indica di quale banca è la filiale*/
+    Utente cassiere; /*(indica quale utente è il cassiere della filiale*/
     String indirizzo;
     String orario;
     String collegamentofoto;
 
+    public Filiale(int idFiliale, String nome, Banca banca, Utente cassiere, String indirizzo, String orario, String collegamentofoto) {
+        this.idFiliale = idFiliale;
+        this.nome = nome;
+        this.banca = banca;
+        this.cassiere = cassiere;
+        this.indirizzo = indirizzo;
+        this.orario = orario;
+        this.collegamentofoto = collegamentofoto;
+    }
 
     public int getIdFiliale() {
         return idFiliale;

@@ -98,4 +98,7 @@ public class Utente {
         return sDAO.login(username,password);
     }
 
+    public boolean registrati (Utente utente) {
+        return UtenteDAO.getInstance().create(utente);
+    }
 }

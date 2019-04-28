@@ -8,6 +8,14 @@ public class Banca {
     String descrizione;
     String fotoRappresentativa;
 
+    public Banca(int idBanca, String nome, Utente direttore, String indirizzo, String descrizione, String fotoRappresentativa) {
+        this.idBanca = idBanca;
+        this.nome = nome;
+        Direttore = direttore;
+        this.indirizzo = indirizzo;
+        this.descrizione = descrizione;
+        this.fotoRappresentativa = fotoRappresentativa;
+    }
 
     public int getIdBanca() {
         return idBanca;
