@@ -8,12 +8,15 @@ public class TestPanel {
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
+    private JTextField textField4;
+    private JTextField textField5;
+    private JTextField textField6;
+    private JTextField textField7;
 
     public TestPanel() {
         testPanel.getUI();
-        testPanel.setVisible(false);
+        testPanel.setVisible(true);
     }
-
 
     public JPanel getTestPanel() {
         return testPanel;
@@ -54,4 +57,37 @@ public class TestPanel {
     public void setTextField3(JTextField textField3) {
         this.textField3 = textField3;
     }
+
+    public JTextField getTextField4() {
+        return textField4;
+    }
+
+    public void setTextField4(JTextField textField4) {
+        this.textField4 = textField4;
+    }
+
+    public JTextField getTextField5() {
+        return textField5;
+    }
+
+    public void setTextField5(JTextField textField5) {
+        this.textField5 = textField5;
+    }
+
+    public JTextField getTextField6() {
+        return textField6;
+    }
+
+    public void setTextField6(JTextField textField6) {
+        this.textField6 = textField6;
+    }
+
+    public JTextField getTextField7() {
+        return textField7;
+    }
+
+    public void setTextField7(JTextField textField7) {
+        textField7 = textField7;
+    }
 }
+

@@ -21,7 +21,7 @@
           <grid row="0" column="1" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="9" fill="0" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties>
-          <text value="Inserisci nome"/>
+          <text value="Inserisci name"/>
         </properties>
       </component>
       <component id="7edd9" class="javax.swing.JButton" binding="confermaButton">

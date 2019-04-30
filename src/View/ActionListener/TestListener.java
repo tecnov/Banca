@@ -2,8 +2,9 @@ package View.ActionListener;
 
 import View.Frame;
 import View.Panel.TestPanel;
+import it.homebank.sportello.Business.RegistrationBusiness;
+import it.homebank.sportello.model.Branch;
 
-import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -19,6 +20,7 @@ public class TestListener implements ActionListener {
     public TestListener(Frame frame) {
         this.frame = frame;
     }
+    private RegistrationBusiness registrationBusiness = new RegistrationBusiness();
 
 
     public final static String TEST = "Testalo";
@@ -28,7 +30,21 @@ public class TestListener implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         String sorgenteEvento = e.getActionCommand();
         if (sorgenteEvento.equals(TEST)) {
+            String name =frame.getTestPnl().getTextField1().getText();
+            String surname =frame.getTestPnl().getTextField2().getText();
+            String username =frame.getTestPnl().getTextField3().getText();
+            String password =frame.getTestPnl().getTextField4().getText();
+            String email =frame.getTestPnl().getTextField5().getText();
+            int type = Integer.parseInt(frame.getTestPnl().getTextField6().getText());
+            String branchText = frame.getTestPnl().getTextField7().getText();
 
+
+
+
+            Branch branch = null;
+            //registrationBusiness.userRegistration(name, surname, username, oa);
+
+            registrationBusiness.userRegistration(name, surname, username, password, email, type, branch);
         }
     }
 }

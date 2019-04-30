@@ -1,23 +1,25 @@
 package it.homebank.sportello.Business;
 
-import it.homebank.sportello.model.Utente;
-
-import javax.swing.*;
+import it.homebank.sportello.model.Branch;
+import it.homebank.sportello.model.User;
 
 public class RegistrationBusiness {
 
-    public Utente registrationUtente (String name, String surname, String username, String password, String email, int tipo ){
 
-        Utente tmpRegistrationUtente = new Utente();
+    public User userRegistration(String name, String surname, String username, String password, String email, int type, Branch branch){
 
-        tmpRegistrationUtente.setNome(name);
-        tmpRegistrationUtente.setCognome(surname);
-        tmpRegistrationUtente.setUsername(username);
-        tmpRegistrationUtente.setPassword(password);
-        tmpRegistrationUtente.setEmail(email);
-        tmpRegistrationUtente.setTipo(tipo);
-        JOptionPane.showMessageDialog(null,"La registrazione è avvenuta con successo");
-        return (tmpRegistrationUtente);
+        User tmpUserRegistration = new User();
+
+        tmpUserRegistration.setName(name);
+        tmpUserRegistration.setSurname(surname);
+        tmpUserRegistration.setUsername(username);
+        tmpUserRegistration.setPassword(password);
+        tmpUserRegistration.setEmail(email);
+        tmpUserRegistration.setType(type);
+        tmpUserRegistration.setBranchUser(branch);
+        tmpUserRegistration.registration(tmpUserRegistration);
+        //JOptionPane.showMessageDialog(null,"La registration è avvenuta con successo");
+        return (tmpUserRegistration);
     }
 
 }

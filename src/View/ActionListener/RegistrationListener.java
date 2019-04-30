@@ -13,7 +13,7 @@ public class RegistrationListener implements ActionListener {
         this.frame = frame;
     }
     public final static String REGISTER = "Registra utente";
-    public final static String COMPLETE = "Completa registrazione";
+    public final static String COMPLETE = "Completa registration";
     public final static String BACK = "Torna indietro";
 
     @Override
@@ -35,7 +35,7 @@ public class RegistrationListener implements ActionListener {
              String password = frame.getRegistrationPnl().getTextName().getText();
              String email = frame.getRegistrationPnl().getTextName().getText();
 
-             registrationBusiness.registrationUtente("davide", "e", "coglione", "con", "ascella", 1);
+           //  registrationBusiness.userRegistration("davide", "e", "coglione", "con", "ascella", 1);
 
              JOptionPane.showMessageDialog(null, "Le abbiamo inviato un email di conferma");
         }

@@ -2,8 +2,7 @@ package View.ActionListener;
 
 import View.Frame;
 import View.Panel.LoginPanel;
-import View.Panel.UtentePanel;
-import View.Panel.RegistrationPanel;
+import View.Panel.UserPanel;
 
 
 import it.homebank.sportello.Business.LoginBusiness;
@@ -18,7 +17,7 @@ public class LoginListener implements ActionListener {
 
     private Frame frame;
 
-    public UtentePanel utentepanel = new UtentePanel();
+    public UserPanel utentepanel = new UserPanel();
     public LoginPanel loginPanel = new LoginPanel();
 
 
@@ -45,14 +44,14 @@ public class LoginListener implements ActionListener {
             else {
                 JOptionPane.showMessageDialog(null, "Benvenuto");
                 loginPanel.getloginPanel().setVisible(false);
-                utentepanel.getUtentePnl().setVisible(true);
+                utentepanel.getUserPnl().setVisible(true);
             }
 
-            if (l.login(username, password).equals(null))
+           /* if (l.login(username, password).equals(null))
                 JOptionPane.showMessageDialog(null, "Registrati");
             else {
                 JOptionPane.showMessageDialog(null, "Benvenuto");
-            }
+            }*/
 
         }
 
