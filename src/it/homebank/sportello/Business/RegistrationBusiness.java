@@ -7,7 +7,7 @@ import javax.swing.*;
 
 public class RegistrationBusiness {
 
-    public Cliente registrationCliente (String name, String surname, String username, String password, String email ){
+    public Cliente registrationCliente (String name, String surname, String username, String password, String email){
 
         Cliente tmpRegistrationCliente = new Cliente();
 

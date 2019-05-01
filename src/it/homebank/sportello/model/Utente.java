@@ -10,6 +10,7 @@ public class Utente {
     private String email;
     private String username;
     private String password;
+    private int cap;
 
     public Utente(){
 
@@ -71,11 +72,15 @@ public class Utente {
         this.password = password;
     }
 
+    public int getCap() {
+        return cap;
+    }
 
+    public void setCap(int cap) {
+        this.cap = cap;
+    }
 
-
-
-    public Utente login ( String username, String password) {
+    public Utente login (String username, String password) {
         UtenteDAO sDAO = new UtenteDAO();
         return sDAO.login(username,password);
     }

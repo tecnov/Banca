@@ -8,7 +8,10 @@ public class RegistrationPanel {
     public JTextField textPassword;
     public JButton confermaButton;
     public JButton backButton;
-    public JTextField textName;
+    private JTextField textSurname;
+    private JTextField textEmail;
+    private JTextField textCAP;
+    private JTextField textName;
     JPanel nordPnl = new JPanel();
     JPanel centerPnl = new JPanel();
     JPanel southPnl = new JPanel();
@@ -50,19 +53,43 @@ public class RegistrationPanel {
         this.confermaButton = confermaButton;
     }
 
-    public JTextField getTextName() {
-        return textName;
-    }
-
-    public void setTextName(JTextField textName) {
-        this.textName = textName;
-    }
-
     public JButton getBackButton() {
         return backButton;
     }
 
     public void setBackButton(JButton backButton) {
         this.backButton = backButton;
+    }
+
+    public JTextField getTextSurname() {
+        return textSurname;
+    }
+
+    public void setTextSurname(JTextField textSurname) {
+        this.textSurname = textSurname;
+    }
+
+    public JTextField getTextEmail() {
+        return textEmail;
+    }
+
+    public void setTextEmail(JTextField textEmail) {
+        this.textEmail = textEmail;
+    }
+
+    public JTextField getTextCAP() {
+        return textCAP;
+    }
+
+    public void setTextCAP(JTextField textCAP) {
+        this.textCAP = textCAP;
+    }
+
+    public JTextField getTextName() {
+        return textName;
+    }
+
+    public void setTextName(JTextField textName) {
+        this.textName = textName;
     }
 }
