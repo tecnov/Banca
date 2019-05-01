@@ -1,16 +1,14 @@
 package it.homebank.sportello.Business;
 
-import it.homebank.sportello.model.Utente;
-
-import javax.swing.*;
+import it.homebank.sportello.model.User;
 
 public class LoginBusiness {
 
 
-    public Utente login(String  username, String  password) {
-        Utente utenteLogin = new Utente();
-        utenteLogin.login(username,password);
-        return utenteLogin;
+    public User login(String  username, String  password) {
+        User userLogin = new User();
+        userLogin.login(username,password);
+        return userLogin;
     }
 
 

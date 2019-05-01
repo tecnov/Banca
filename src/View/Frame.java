@@ -3,6 +3,7 @@ package View;
 import View.ActionListener.HomeListener;
 import View.ActionListener.LoginListener;
 import View.ActionListener.RegistrationListener;
+import View.ActionListener.TestListener;
 import View.Panel.*;
 
 import javax.swing.*;
@@ -16,6 +17,7 @@ public class Frame extends JFrame {
     AdministratorPanel administratorPnl = new AdministratorPanel();
     CashierPanel cashierPnl = new CashierPanel();
     CustomerPanel customerPnl = new CustomerPanel();
+    TestPanel testPnl = new TestPanel();
 
     /**
      * Serve a costruire l'interfaccia
@@ -35,7 +37,7 @@ public class Frame extends JFrame {
         view.setLocation(35,25);
         rootPanel.setLayout(new BorderLayout());
 
-        //TODO aggiungere tutti i pannelli
+        // aggiungere tutti i pannelli
 
         centroPnl.add(loginPnl.getloginPanel());
         centroPnl.add(registrationPnl.getRegistrationPanel());
@@ -43,6 +45,7 @@ public class Frame extends JFrame {
         centroPnl.add(administratorPnl.getAdministratorPanel());
         centroPnl.add(cashierPnl.getCashierPanel());
         centroPnl.add(cashierPnl.getCashierPanel());
+        centroPnl.add(testPnl.getTestPanel());
 
 
 
@@ -60,11 +63,13 @@ public class Frame extends JFrame {
 
 
 
-        //TODO Action Listener
+        // Action Listener
 
         LoginListener loginListener = new LoginListener(this);
         RegistrationListener registrationListener = new RegistrationListener(this);
         HomeListener homeListener = new HomeListener(this);
+        TestListener testListener = new TestListener(this);
+
         loginPnl.getConfermaButton().addActionListener(loginListener);
         loginPnl.getConfermaButton().setActionCommand(loginListener.LOGIN);
         loginPnl.getBackButton().addActionListener(loginListener);
@@ -75,6 +80,8 @@ public class Frame extends JFrame {
         homePnl.getRegistrationButton().setActionCommand(homeListener.REGISTER);
         homePnl.getLoginButton().addActionListener(homeListener);
         homePnl.getLoginButton().setActionCommand(homeListener.LOGIN);
+        testPnl.getTestButton().addActionListener(testListener);
+        testPnl.getTestButton().setActionCommand(testListener.TEST);
 
     }
 
@@ -110,5 +117,13 @@ public class Frame extends JFrame {
 
     public void setAdministratorPnl(AdministratorPanel administratorPnl) {
         this.administratorPnl = administratorPnl;
+    }
+
+    public TestPanel getTestPnl() {
+        return testPnl;
+    }
+
+    public void setTestPnl(TestPanel testPnl) {
+        this.testPnl = testPnl;
     }
 }
