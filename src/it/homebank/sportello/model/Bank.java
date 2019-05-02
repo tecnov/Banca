@@ -5,18 +5,19 @@ import it.homebank.sportello.DAO.BankDAO;
 public class Bank {
     int idBank;
     String name;
-    User director;
     String address;
     String description;
     String photo;
+    User director;
 
-    public Bank(int idBank, String name, User director, String address, String description, String photo) {
+    public Bank(int idBank, String name, String address, String description, String photo, User director) {
         this.idBank = idBank;
         this.name = name;
-        this.director = director;
         this.address = address;
         this.description = description;
         this.photo = photo;
+        this.director = director;
+
     }
 
     public Bank() {

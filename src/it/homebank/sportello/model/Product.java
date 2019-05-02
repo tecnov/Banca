@@ -2,21 +2,23 @@ package it.homebank.sportello.model;
 
 public class Product {
     private int idProduct;
-    private Bank bank; /*indica di quale bank è il prodotto*/
     private String name;
     private String description;
     private int price;
     private String startDate;
     private String finishDate;
+    private Bank bank; /*indica di quale bank è il prodotto*/
 
-    public Product(int idProduct, Bank bank, String name, String description, int price, String startDate, String finishDate) {
+
+    public Product(int idProduct, String name, String description, int price, String startDate, String finishDate, Bank bank) {
         this.idProduct = idProduct;
-        this.bank = bank;
         this.name = name;
         this.description = description;
         this.price = price;
         this.startDate = startDate;
         this.finishDate = finishDate;
+        this.bank = bank;
+
     }
 
     public int getIdProduct() {

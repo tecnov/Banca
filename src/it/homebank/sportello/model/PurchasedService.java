@@ -2,17 +2,18 @@ package it.homebank.sportello.model;
 
 public class PurchasedService {
     private int idPurchasedService;
+     private String startDate;
+    private String finishDate;
     Service service; /*indica quale service è*/
     User customer; /*chi ha usufruito del service*/
-    private String startDate;
-    private String finishDate;
 
-    public PurchasedService(int idPurchasedService, Service service, User customer, String startDate, String finishDate) {
+
+    public PurchasedService(int idPurchasedService, String startDate, String finishDate, Service service, User customer) {
         this.idPurchasedService = idPurchasedService;
+         this.startDate = startDate;
+        this.finishDate = finishDate;
         this.service = service;
         this.customer = customer;
-        this.startDate = startDate;
-        this.finishDate = finishDate;
     }
 
     public int getIdPurchasedService() {

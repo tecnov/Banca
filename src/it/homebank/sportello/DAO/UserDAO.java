@@ -43,6 +43,7 @@ public class UserDAO {
     public User findbyIdUser(int idUser) {
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM User WHERE idUser='" + idUser + "' ");
         User s = new User();
+        Branch b = new Branch();
         if (result.size() == 0) return null;
         String[] riga = result.get(0);
         s.setIdUser(Integer.parseInt(riga[0]));
@@ -52,6 +53,7 @@ public class UserDAO {
         s.setSurname(riga[4]);
         s.setEmail(riga[5]);
         s.setType(Integer.parseInt(riga[6]));
+        s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[7])));
         return s;
     }
 
@@ -61,7 +63,7 @@ public class UserDAO {
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM user WHERE username='"+username+"' AND password='"+password+"'");
 
         if(result == null) return null;
-
+        Branch b = new Branch();
         User s = new User();
         String[] riga = result.get(0);
         s.setIdUser(Integer.parseInt(riga[0]));
@@ -71,13 +73,20 @@ public class UserDAO {
         s.setSurname(riga[4]);
         s.setEmail(riga[5]);
         s.setType(Integer.parseInt(riga[6]));
+        s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[7])));
         return s;
     }
 
 
     public boolean create( User user){
+        Branch branch;
+         int idBranch;
+        branch = user.getBranchUser();
+        idBranch = branch.getIdBrach();
 
-        String sql = "INSERT INTO 'user' ('username', 'password', 'nome', 'cognome', 'email', 'tipo' VALUES ( '"+ user.getUsername() +"', '"+ user.getPassword() +"', '"+ user.getName().replaceAll("'","`")+"', '"+ user.getSurname().replaceAll("'","`")+"', '"+ user.getEmail()+"', '"+ user.getType()+"', '"+ user.getBranchUser()+"')";
+
+
+        String sql = "INSERT INTO `User` (`username`, `password`, `name`, `surname`, `email`, `type`, `Branch_idBranch`) VALUES ( '"+ user.getUsername() +"', '"+ user.getPassword() +"', '"+ user.getName() +"', '"+ user.getSurname() +"', '"+ user.getEmail()+"', '"+ user.getType()+"', '"+ idBranch+"')";
 
       return DbConnection.getInstance().eseguiAggiornamento(sql);
 
