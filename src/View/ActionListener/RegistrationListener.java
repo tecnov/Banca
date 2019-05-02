@@ -34,6 +34,7 @@ public class RegistrationListener implements ActionListener {
              String username = frame.getRegistrationPnl().getTextName().getText();
              String password = frame.getRegistrationPnl().getTextName().getText();
              String email = frame.getRegistrationPnl().getTextName().getText();
+             String CAP = frame.getRegistrationPnl().getTextName().getText();
 
            //  registrationBusiness.userRegistration("davide", "e", "coglione", "con", "ascella", 1);
 
