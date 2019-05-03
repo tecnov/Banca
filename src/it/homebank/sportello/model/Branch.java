@@ -6,17 +6,16 @@ public class Branch {
 
     int idBrach;
     String name;
-    Bank bank; /*indica di quale bank è la filiale*/
-    User cashier; /*(indica quale utente è il cashier della filiale*/
     String address;
     String schedule;
     String photo;
+    Bank bank; /*indica di quale bank è la filiale*/
 
-    public Branch(int idBrach, String name, Bank bank, User cashier, String address, String schedule, String photo) {
+
+    public Branch(int idBrach, String name, String address, String schedule, String photo, Bank bank) {
         this.idBrach = idBrach;
         this.name = name;
         this.bank = bank;
-        this.cashier = cashier;
         this.address = address;
         this.schedule = schedule;
         this.photo = photo;
@@ -72,14 +71,6 @@ public class Branch {
 
     public void setBank(Bank bank) {
         this.bank = bank;
-    }
-
-    public User getCashier() {
-        return cashier;
-    }
-
-    public void setCashier(User cashier) {
-        this.cashier = cashier;
     }
 
 

@@ -2,19 +2,21 @@ package it.homebank.sportello.model;
 
 public class Service {
     private int idService;
-    Bank bank; /*di quale bank è il service*/
     private String name;
     private String description;
     private int interest;
     private int duration;
+    Bank bank; /*di quale bank è il service*/
 
-    public Service(int idService, Bank bank, String name, String description, int interest, int duration) {
+
+    public Service(int idService, String name, String description, int interest, int duration, Bank bank) {
         this.idService = idService;
-        this.bank = bank;
         this.name = name;
         this.description = description;
         this.interest = interest;
         this.duration = duration;
+        this.bank = bank;
+
     }
 
     public int getIdService() {

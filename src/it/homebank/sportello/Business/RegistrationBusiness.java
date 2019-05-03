@@ -22,5 +22,11 @@ public class RegistrationBusiness {
         //JOptionPane.showMessageDialog(null,"La registration è avvenuta con successo");
         return (tmpUserRegistration);
     }
+    public Branch findBranchbyName(String branch){
+
+        Branch tmpBranch = new Branch();
+        tmpBranch.findbyName(branch);
+        return tmpBranch;
+    }
 
 }

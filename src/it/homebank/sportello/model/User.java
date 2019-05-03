@@ -13,7 +13,7 @@ public class User {
     private String surname;
     private String email;
     private int type;
-    private Branch branchUser;
+    private Branch branchUser; /*indica a quale filiale appartiene il cliente, se il cliente è di tipo 3 è sia cliente che cassiere */
 
 
 

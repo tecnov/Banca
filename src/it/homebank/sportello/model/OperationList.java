@@ -2,19 +2,19 @@ package it.homebank.sportello.model;
 
 public class OperationList {
     private int idOperation;
-    User customer;                          /* il customer che ha effettuato l'operaizone */
     private String date;
-    private Product product;               /*il product acquistato, può essere vuoto se ha fatto un passaggio di soldi */
     private boolean cashierAuthorization;
+    User customer;                          /* il customer che ha effettuato l'operaizone */
+    private Product product;               /*il product acquistato, può essere vuoto se ha fatto un passaggio di soldi */
     PurchasedService sender;                 /*servizi tra i quali si è passato i soldi...*/
-    PurchasedService recipient;              /*...può essere vuoto se ha acquistato un product*/
+    PurchasedService recipient;              /*...possono essere vuoti se ha acquistato un product*/
 
-    public OperationList(int idOperation, User customer, String date, Product product, boolean cashierAuthorization, PurchasedService sender, PurchasedService recipient) {
+    public OperationList(int idOperation, String date, boolean cashierAuthorization, User customer, Product product, PurchasedService sender, PurchasedService recipient) {
         this.idOperation = idOperation;
-        this.customer = customer;
         this.date = date;
-        this.product = product;
         this.cashierAuthorization = cashierAuthorization;
+        this.customer = customer;
+        this.product = product;
         this.sender = sender;
         this.recipient = recipient;
     }
