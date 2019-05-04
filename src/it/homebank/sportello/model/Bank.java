@@ -2,21 +2,21 @@ package it.homebank.sportello.model;
 
 import it.homebank.sportello.DAO.BankDAO;
 
+import java.util.ArrayList;
+
 public class Bank {
     int idBank;
     String name;
     String address;
     String description;
     String photo;
-    User director;
 
-    public Bank(int idBank, String name, String address, String description, String photo, User director) {
+    public Bank(int idBank, String name, String address, String description, String photo) {
         this.idBank = idBank;
         this.name = name;
         this.address = address;
         this.description = description;
         this.photo = photo;
-        this.director = director;
 
     }
 
@@ -65,18 +65,15 @@ public class Bank {
         this.photo = photo;
     }
 
-    public User getDirector() {
-        return director;
-    }
-
-    public void setDirector(User director) {
-        this.director = director;
-    }
-
 
     //filtering and search
     public static Bank findbyIdBank(int idBank) {
         BankDAO sDAO = new BankDAO();
         return sDAO.findbyIdBank(idBank);
+    }
+
+    public static ArrayList<Bank> findAll() {
+        BankDAO sDAO = new BankDAO();
+        return sDAO.findAll();
     }
 }

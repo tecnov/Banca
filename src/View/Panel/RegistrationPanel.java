@@ -6,12 +6,12 @@ public class RegistrationPanel {
     public JPanel registrationPanel;
     public JTextField textUser;
     public JTextField textPassword;
-    public JButton confermaButton;
-    public JButton backButton;
     private JTextField textSurname;
     private JTextField textEmail;
     private JTextField textCAP;
     private JTextField textName;
+    public JButton confermaButton;
+    public JButton backButton;
     JPanel nordPnl = new JPanel();
     JPanel centerPnl = new JPanel();
     JPanel southPnl = new JPanel();

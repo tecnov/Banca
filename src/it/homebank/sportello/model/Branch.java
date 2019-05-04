@@ -84,4 +84,8 @@ public class Branch {
         BranchDAO sDAO = new BranchDAO();
         return sDAO.findbyName(name);
     }
+    public Branch findbyIdBank (int idBank) {
+        BranchDAO sDAO = new BranchDAO();
+        return sDAO.fingbyIdBank (idBank);
+    }
 }

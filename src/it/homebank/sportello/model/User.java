@@ -1,8 +1,9 @@
 package it.homebank.sportello.model;
 
-import View.Panel.UserPanel;
-import it.homebank.sportello.DAO.BankDAO;
 import it.homebank.sportello.DAO.UserDAO;
+
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
 
 public class User {
 
@@ -13,17 +14,24 @@ public class User {
     private String surname;
     private String email;
     private int type;
+    private int authorization;
     private Branch branchUser; /*indica a quale filiale appartiene il cliente, se il cliente è di tipo 3 è sia cliente che cassiere */
+                                /*se il direttore è di tipo 3 è sia cliente che direttore*/
 
 
-
-    public User(int idUser, String name, String surname, String email, String username, String password) {
+    public User(int idUser, String username, String password, String name, String surname, String email, int type, int authorization ,Branch branchUser) {
+        this.idUser = idUser;
+        this.username = username;
+        this.password = password;
         this.name = name;
         this.surname = surname;
         this.email = email;
-        this.username = username;
-        this.password = password;
+        this.type = type;
+        this.authorization = authorization;
+        this.branchUser = branchUser;
     }
+
+
 
     public User() {
 
@@ -93,9 +101,14 @@ public class User {
         this.branchUser = branchUser;
     }
 
+    public int getAuthorization() {
+        return authorization;
+    }
 
-
-    //filtering and search
+    public void setAuthorization(int authorization) {
+        this.authorization = authorization;
+    }
+//filtering and search
 
     public static User findbyIdUser(int idUser) {
         UserDAO sDAO = new UserDAO();
@@ -106,10 +119,11 @@ public class User {
 
 
 
+
     //function
-    public boolean registration(User user) {
+    public boolean registration(User user) { /*questa funzione aggiunge un user senza autorizzazione e di tipo cliente*/
         UserDAO sDAO = new UserDAO();
-        return UserDAO.getInstance().create(user);
+        return sDAO.getInstance().create(user);
     }
 
     public static User login (String username, String password) {
@@ -117,5 +131,13 @@ public class User {
         return sDAO.login(username,password);
     }
 
+    public boolean authorization (User user, boolean confirm){
+        UserDAO sDAO = new UserDAO();
+        if (confirm == true ) {
+            return sDAO.confirm(user);
+        }
+        else
+            {return sDAO.delete(user);}
 
+    }
 }

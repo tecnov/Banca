@@ -24,33 +24,45 @@ public class BranchDAO {
         Bank d = new Bank();
         User u = new User();
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Branch WHERE name='" + name + "' ");
-        if(result.size() == 0) {
-            JOptionPane.showMessageDialog(null,"nessuna filiale con quel nome");
-            return null;
-        }
+        if(result.size() == 0) return null;
         String[] riga = result.get(0);
         s.setIdBrach(Integer.parseInt(riga[0]));
         s.setName(riga[1]);
-        s.setBank(d.findbyIdBank(Integer.parseInt(riga[2])));
-        s.setAddress(riga[3]);
-        s.setSchedule(riga[4]);
-        s.setPhoto(riga[5]);
+        s.setAddress(riga[2]);
+        s.setSchedule(riga[3]);
+        s.setPhoto(riga[4]);
+        s.setBank(d.findbyIdBank(Integer.parseInt(riga[5])));
+
         return s;
     }
 
     public Branch findbyIdBranch(int idBranch) {
         Branch s = new Branch();
         Bank d = new Bank();
-        User u = new User();
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Branch WHERE idBranch='" + idBranch + "' ");
         if(result.size() == 0) return null;
         String[] riga = result.get(0);
         s.setIdBrach(Integer.parseInt(riga[0]));
         s.setName(riga[1]);
-        s.setBank(d.findbyIdBank(Integer.parseInt(riga[2])));
-        s.setAddress(riga[3]);
-        s.setSchedule(riga[4]);
-        s.setPhoto(riga[5]);
+        s.setAddress(riga[2]);
+        s.setSchedule(riga[3]);
+        s.setPhoto(riga[4]);
+        s.setBank(d.findbyIdBank(Integer.parseInt(riga[5])));
+        return s;
+    }
+
+    public Branch fingbyIdBank(int idBank) {
+        Branch s = new Branch();
+        Bank d = new Bank();
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Branch WHERE idBranch='" + idBank + "' ");
+        if(result.size() == 0) return null;
+        String[] riga = result.get(0);
+        s.setIdBrach(Integer.parseInt(riga[0]));
+        s.setName(riga[1]);
+        s.setAddress(riga[2]);
+        s.setSchedule(riga[3]);
+        s.setPhoto(riga[4]);
+        s.setBank(d.findbyIdBank(Integer.parseInt(riga[5])));
         return s;
     }
 }
