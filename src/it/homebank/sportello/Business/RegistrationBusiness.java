@@ -5,9 +5,8 @@ import it.homebank.sportello.model.User;
 
 public class RegistrationBusiness {
 
-    public Cliente registrationCliente (String name, String surname, String username, String password, String email){
 
-    public User userRegistration(String name, String surname, String username, String password, String email, int type, Branch branch){
+    public User userRegistration(String username, String password, String name, String surname, String email, Branch branchUser){
 
         User tmpUserRegistration = new User();
 
@@ -16,12 +15,16 @@ public class RegistrationBusiness {
         tmpUserRegistration.setUsername(username);
         tmpUserRegistration.setPassword(password);
         tmpUserRegistration.setEmail(email);
-        tmpUserRegistration.setType(type);
-        tmpUserRegistration.setBranchUser(branch);
+        tmpUserRegistration.setBranchUser(branchUser);
         tmpUserRegistration.registration(tmpUserRegistration);
-        //JOptionPane.showMessageDialog(null,"La registration è avvenuta con successo");
         return (tmpUserRegistration);
     }
+
+
+
+
+
+
     public Branch findBranchbyName(String branch){
 
         Branch tmpBranch = new Branch();

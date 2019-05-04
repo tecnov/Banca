@@ -5,6 +5,7 @@ import it.homebank.sportello.model.Bank;
 import it.homebank.sportello.model.User;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class BankDAO {
     private static BankDAO instance;
@@ -14,6 +15,24 @@ public class BankDAO {
         return instance;
     }
 
+    public ArrayList<Bank> findAll() {
+
+        ArrayList<Bank> bank = new ArrayList<>();
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Bank");
+        Iterator<String[]> i = result.iterator();
+
+        while (i.hasNext()) { //continua ad incrementare finché non trova l'elemento successivo oppure se l'elemento successivo è un'eccezione
+            String[] riga = i.next();
+            Bank s = new Bank();
+            s.setIdBank(Integer.parseInt(riga[0]));
+            s.setName(riga[1]);
+            s.setAddress(riga[2]);
+            s.setDescription(riga[3]);
+            s.setPhoto(riga[4]);
+            bank.add(s);
+        }
+        return bank;
+    }
 
 
     public Bank findbyIdBank(int idBank) {
@@ -22,12 +41,11 @@ public class BankDAO {
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Banca WHERE idBank='" + idBank + "' ");
         if (result.size() == 0) return null;
         String[] riga = result.get(0);
-        s.setIdBank(Integer.parseInt(riga[1]));
-        s.setName(riga[2]);
-        s.setDirector(u.findbyIdUser(Integer.parseInt(riga[3]))); //TODO
-        s.setAddress(riga[4]);
-        s.setDescription(riga[5]);
-        s.setPhoto(riga[6]);
+        s.setIdBank(Integer.parseInt(riga[0]));
+        s.setName(riga[1]);
+        s.setAddress(riga[2]);
+        s.setDescription(riga[3]);
+        s.setPhoto(riga[4]);
         return s;
 
 

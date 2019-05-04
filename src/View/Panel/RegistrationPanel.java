@@ -4,21 +4,21 @@ import javax.swing.*;
 
 public class RegistrationPanel {
     public JPanel registrationPanel;
-    public JTextField textUser;
+    public JTextField textUsername;
     public JTextField textPassword;
-    public JButton confermaButton;
+    public JTextField textSurname;
+    public JTextField textEmail;
+    public JTextField textBranchString;
+    public JTextField textName;
+    public JButton completeButton;
     public JButton backButton;
-    private JTextField textSurname;
-    private JTextField textEmail;
-    private JTextField textCAP;
-    private JTextField textName;
     JPanel nordPnl = new JPanel();
     JPanel centerPnl = new JPanel();
     JPanel southPnl = new JPanel();
 
     public RegistrationPanel() {
         registrationPanel.getUI();
-        registrationPanel.setVisible(false);
+        registrationPanel.setVisible(true);
     }
 
     public JPanel getRegistrationPanel() {
@@ -29,12 +29,12 @@ public class RegistrationPanel {
         this.registrationPanel = registrationPanel;
     }
 
-    public JTextField getTextUser() {
-        return textUser;
+    public JTextField getTextUsername() {
+        return textUsername;
     }
 
-    public void setTextUser(JTextField textUser) {
-        this.textUser = textUser;
+    public void setTextUsername(JTextField textUsername) {
+        this.textUsername = textUsername;
     }
 
     public JTextField getTextPassword() {
@@ -46,11 +46,11 @@ public class RegistrationPanel {
     }
 
     public JButton getConfermaButton() {
-        return confermaButton;
+        return completeButton;
     }
 
     public void setConfermaButton(JButton confermaButton) {
-        this.confermaButton = confermaButton;
+        this.completeButton = confermaButton;
     }
 
     public JButton getBackButton() {
@@ -77,12 +77,8 @@ public class RegistrationPanel {
         this.textEmail = textEmail;
     }
 
-    public JTextField getTextCAP() {
-        return textCAP;
-    }
-
-    public void setTextCAP(JTextField textCAP) {
-        this.textCAP = textCAP;
+    public void setTextBranchString(JTextField textBranchString) {
+        this.textBranchString = textBranchString;
     }
 
     public JTextField getTextName() {
@@ -91,5 +87,9 @@ public class RegistrationPanel {
 
     public void setTextName(JTextField textName) {
         this.textName = textName;
+    }
+
+    public JTextField getTextBranchString() {
+        return textBranchString;
     }
 }

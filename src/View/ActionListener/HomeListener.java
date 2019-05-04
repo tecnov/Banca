@@ -2,11 +2,13 @@ package View.ActionListener;
 
 import View.Frame;
 import View.Panel.RegistrationPanel;
+import it.homebank.sportello.model.Bank;
 
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
 public class HomeListener implements ActionListener  {
 
@@ -23,6 +25,13 @@ public class HomeListener implements ActionListener  {
     @Override
     public void actionPerformed(ActionEvent e) {
         String sorgenteEvento = e.getActionCommand();
+
+     /*   frame.getHome2Panel().getAllBank().removeAllItems();
+        Bank bank = new Bank();
+        ArrayList<Bank> banki = bank.findAll() ;
+        for (int i = 0; i < banki.size(); i++) {
+            frame.getHome2Panel().getAllBank().addItem(banki.get(i).getName());
+        }*/
 
         if (sorgenteEvento.equals(REGISTER)) {
             JOptionPane.showMessageDialog(null, "è pregato di inserire i suoi dati");

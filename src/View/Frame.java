@@ -1,9 +1,6 @@
 package View;
 
-import View.ActionListener.HomeListener;
-import View.ActionListener.LoginListener;
-import View.ActionListener.RegistrationListener;
-import View.ActionListener.TestListener;
+import View.ActionListener.*;
 import View.Panel.*;
 
 import javax.swing.*;
@@ -18,6 +15,8 @@ public class Frame extends JFrame {
     CashierPanel cashierPnl = new CashierPanel();
     CustomerPanel customerPnl = new CustomerPanel();
     TestPanel testPnl = new TestPanel();
+    PendingRequestPanel pendingRequestPanel = new PendingRequestPanel();
+    //Home2Panel home2Panel = new Home2Panel();
 
     /**
      * Serve a costruire l'interfaccia
@@ -37,7 +36,7 @@ public class Frame extends JFrame {
         view.setLocation(35,25);
         rootPanel.setLayout(new BorderLayout());
 
-        // aggiungere tutti i pannelli
+        // add all panel
 
         centroPnl.add(loginPnl.getloginPanel());
         centroPnl.add(registrationPnl.getRegistrationPanel());
@@ -46,6 +45,8 @@ public class Frame extends JFrame {
         centroPnl.add(cashierPnl.getCashierPanel());
         centroPnl.add(cashierPnl.getCashierPanel());
         centroPnl.add(testPnl.getTestPanel());
+//        centroPnl.add(home2Panel.getHome2Panel());
+        centroPnl.add(customerPnl.getCustomerPanel());
 
 
 
@@ -69,9 +70,10 @@ public class Frame extends JFrame {
         RegistrationListener registrationListener = new RegistrationListener(this);
         HomeListener homeListener = new HomeListener(this);
         TestListener testListener = new TestListener(this);
+        //Home2Listener home2Listener = new Home2Listener(this);
 
-        loginPnl.getConfermaButton().addActionListener(loginListener);
-        loginPnl.getConfermaButton().setActionCommand(loginListener.LOGIN);
+        loginPnl.getLogButton().addActionListener(loginListener);
+        loginPnl.getLogButton().setActionCommand(loginListener.LOGIN);
         loginPnl.getBackButton().addActionListener(loginListener);
         loginPnl.getBackButton().setActionCommand(loginListener.BACK);
         registrationPnl.getBackButton().addActionListener(registrationListener);
@@ -82,11 +84,20 @@ public class Frame extends JFrame {
         homePnl.getLoginButton().setActionCommand(homeListener.LOGIN);
         testPnl.getTestButton().addActionListener(testListener);
         testPnl.getTestButton().setActionCommand(testListener.TEST);
+        //customerPnl.getActivatedServicesButton().addActionListener();
+      //  home2Panel.getLoginButton().addActionListener(home2Listener);
+        //home2Panel.getLoginButton().setActionCommand(home2Listener.LOGIN);
 
     }
 
 
+  //  public Home2Panel getHome2Panel() {
+    //    return home2Panel;
+    //}
 
+    //public void setHome2Panel(Home2Panel home2Panel) {
+    //    this.home2Panel = home2Panel;
+   // }
 
     public JPanel getCentroPnl() {
         return centroPnl;
@@ -125,5 +136,37 @@ public class Frame extends JFrame {
 
     public void setTestPnl(TestPanel testPnl) {
         this.testPnl = testPnl;
+    }
+
+    public void setLoginPnl(LoginPanel loginPnl) {
+        this.loginPnl = loginPnl;
+    }
+
+    public void setRegistrationPnl(RegistrationPanel registrationPnl) {
+        this.registrationPnl = registrationPnl;
+    }
+
+    public CashierPanel getCashierPnl() {
+        return cashierPnl;
+    }
+
+    public void setCashierPnl(CashierPanel cashierPnl) {
+        this.cashierPnl = cashierPnl;
+    }
+
+    public CustomerPanel getCustomerPnl() {
+        return customerPnl;
+    }
+
+    public void setCustomerPnl(CustomerPanel customerPnl) {
+        this.customerPnl = customerPnl;
+    }
+
+    public PendingRequestPanel getPendingRequestPanel() {
+        return pendingRequestPanel;
+    }
+
+    public void setPendingRequestPanel(PendingRequestPanel pendingRequestPanel) {
+        this.pendingRequestPanel = pendingRequestPanel;
     }
 }

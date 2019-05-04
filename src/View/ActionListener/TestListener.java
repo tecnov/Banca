@@ -31,17 +31,24 @@ public class TestListener implements ActionListener {
         String sorgenteEvento = e.getActionCommand();
         if (sorgenteEvento.equals(TEST)) {
             Branch branch;
-            String name =frame.getTestPnl().getTextField1().getText();
-            String surname =frame.getTestPnl().getTextField2().getText();
-            String username =frame.getTestPnl().getTextField3().getText();
-            String password =frame.getTestPnl().getTextField4().getText();
-            String email =frame.getTestPnl().getTextField5().getText();
-            int type = Integer.parseInt(frame.getTestPnl().getTextField6().getText());
+            String name = frame.getTestPnl().getTextField1().getText();
+            String surname = frame.getTestPnl().getTextField2().getText();
+            String username = frame.getTestPnl().getTextField3().getText();
+            String password = frame.getTestPnl().getTextField4().getText();
+            String email = frame.getTestPnl().getTextField5().getText();
             String branchString = frame.getTestPnl().getTextField7().getText();
 
             branch = registrationBusiness.findBranchbyName(branchString);
 
-            registrationBusiness.userRegistration(name, surname, username, password, email, type, branch);
+            registrationBusiness.userRegistration(name, surname, username, password, email, branch);
         }
     }
 }
+
+/*SOMMA (INT PRIMONUMEOR, INT SECONDONUMERO){
+    INT TERZONUMERO;
+    PRIMONUMERO+SECONDONUMERO=TERZONUMERO;
+    RETURN TERZONUMERO;
+}
+
+INT TERZO = SOMMA(3,5)*/
