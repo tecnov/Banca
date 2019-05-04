@@ -13,7 +13,7 @@ public class Home2Panel {
 
     public Home2Panel() {
        home2Panel.getUI();
-        home2Panel.setVisible(true);
+        home2Panel.setVisible(false);
 
     }
 

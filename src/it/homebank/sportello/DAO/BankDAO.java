@@ -38,7 +38,7 @@ public class BankDAO {
     public Bank findbyIdBank(int idBank) {
         Bank s = new Bank();
         User u = new User();
-        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Banca WHERE idBank='" + idBank + "' ");
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Bank WHERE idBank='" + idBank + "' ");
         if (result.size() == 0) return null;
         String[] riga = result.get(0);
         s.setIdBank(Integer.parseInt(riga[0]));
