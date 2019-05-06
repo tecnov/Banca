@@ -14,7 +14,7 @@ public class User {
     private String surname;
     private String email;
     private int type;
-    private int authorization;
+    private int authorization;  // se 0 non ancora autenticato. se 1 il cliente è autenticato
     private Branch branchUser; /*indica a quale filiale appartiene il cliente, se il cliente è di tipo 3 è sia cliente che cassiere */
                                 /*se il direttore è di tipo 3 è sia cliente che direttore*/
 

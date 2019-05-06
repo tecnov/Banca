@@ -42,5 +42,7 @@ public class TestListener implements ActionListener {
 
             registrationBusiness.userRegistration(name, surname, username, password, email, branch);
         }
+
+
     }
 }

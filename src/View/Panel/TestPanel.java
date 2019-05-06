@@ -11,12 +11,10 @@ public class TestPanel {
     private JTextField textField4;
     private JTextField textField5;
     private JTextField textField6;
-    private JLabel nameLabel;
-    private JLabel passwordLabel;
 
     public TestPanel() {
         testPanel.getUI();
-        testPanel.setVisible(true);
+        testPanel.setVisible(false);
     }
 
     public JPanel getTestPanel() {

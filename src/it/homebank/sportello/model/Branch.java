@@ -82,7 +82,8 @@ public class Branch {
     }
     public Branch findbyName(String name) {
         BranchDAO sDAO = new BranchDAO();
-        return sDAO.findbyName(name);
+        Branch s = sDAO.findbyName(name);
+        return s;
     }
     public Branch findbyIdBank (int idBank) {
         BranchDAO sDAO = new BranchDAO();
