@@ -87,14 +87,14 @@ public class UserDAO {
     }
 
 
-    public boolean create( User user){ /*questa funzione aggiunge un user senza autorizzazione e di tipo cliente*/
-        Branch branch;                  //TODO da modificare con parametri nuovi
+    public boolean create( User user){ /*questa funzione aggiunge un user senza autorizzazione e di tipo cliente*/  //String username, String password, String name, String surname, String email, Branch branchUser
+        Branch branch;
          int idBranch;
         branch = user.getBranchUser();
-        idBranch = branch.getIdBrach();
+        idBranch = branch.getIdBranch();
 
 
-        String sql = "INSERT INTO `User` (`username`, `password`, `name`, `surname`, `email`, `type`, `Branch_idBranch`) VALUES ( '"+ user.getUsername() +"', '"+ user.getPassword() +"', '"+ user.getName() +"', '"+ user.getSurname() +"', '"+ user.getEmail()+"', '"+ user.getType()+"', '"+ idBranch+"')";
+        String sql = "INSERT INTO `User` (`username`, `password`, `name`, `surname`, `email`, `Branch_idBranch`) VALUES ( '"+ user.getUsername() +"', '"+ user.getPassword() +"', '"+ user.getName() +"', '"+ user.getSurname() +"', '"+ user.getEmail()+"', '"+ idBranch+"')";
 
       return DbConnection.getInstance().eseguiAggiornamento(sql);
 

@@ -11,7 +11,6 @@ public class TestPanel {
     private JTextField textField4;
     private JTextField textField5;
     private JTextField textField6;
-    private JTextField textField7;
 
     public TestPanel() {
         testPanel.getUI();
@@ -82,12 +81,6 @@ public class TestPanel {
         this.textField6 = textField6;
     }
 
-    public JTextField getTextField7() {
-        return textField7;
-    }
 
-    public void setTextField7(JTextField textField7) {
-        textField7 = textField7;
-    }
 }
 

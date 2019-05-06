@@ -1,5 +1,6 @@
 package it.homebank.sportello.Business;
 
+import it.homebank.sportello.DAO.BranchDAO;
 import it.homebank.sportello.model.Branch;
 import it.homebank.sportello.model.User;
 
@@ -22,13 +23,10 @@ public class RegistrationBusiness {
 
 
 
-
-
-
     public Branch findBranchbyName(String branch){
 
-        Branch tmpBranch = new Branch();
-        tmpBranch.findbyName(branch);
+        BranchDAO sDAO = new BranchDAO();
+        Branch tmpBranch = sDAO.findbyName(branch);
         return tmpBranch;
     }
 

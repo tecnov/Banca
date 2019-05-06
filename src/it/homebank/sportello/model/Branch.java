@@ -4,7 +4,7 @@ import it.homebank.sportello.DAO.BranchDAO;
 
 public class Branch {
 
-    int idBrach;
+    int idBranch;
     String name;
     String address;
     String schedule;
@@ -13,7 +13,7 @@ public class Branch {
 
 
     public Branch(int idBrach, String name, String address, String schedule, String photo, Bank bank) {
-        this.idBrach = idBrach;
+        this.idBranch = idBrach;
         this.name = name;
         this.bank = bank;
         this.address = address;
@@ -25,12 +25,12 @@ public class Branch {
 
     }
 
-    public int getIdBrach() {
-        return idBrach;
+    public int getIdBranch() {
+        return idBranch;
     }
 
-    public void setIdBrach(int idBrach) {
-        this.idBrach = idBrach;
+    public void setIdBranch(int idBranch) {
+        this.idBranch = idBranch;
     }
 
     public String getName() {
@@ -82,7 +82,8 @@ public class Branch {
     }
     public Branch findbyName(String name) {
         BranchDAO sDAO = new BranchDAO();
-        return sDAO.findbyName(name);
+        Branch s = sDAO.findbyName(name);
+        return s;
     }
     public Branch findbyIdBank (int idBank) {
         BranchDAO sDAO = new BranchDAO();

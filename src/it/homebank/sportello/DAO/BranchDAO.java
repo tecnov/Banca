@@ -5,9 +5,7 @@ import it.homebank.sportello.model.Bank;
 import it.homebank.sportello.model.Branch;
 import it.homebank.sportello.model.User;
 
-import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Iterator;
 
 public class BranchDAO {
 
@@ -21,12 +19,11 @@ public class BranchDAO {
     }
     public Branch findbyName(String name) {
         Branch s = new Branch();
-    Bank d = new Bank();
-    User u = new User();
-    ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Branch WHERE name='" + name + "' ");
+        Bank d = new Bank();
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Branch WHERE name='" + name + "' ");
         if(result.size() == 0) return null;
-    String[] riga = result.get(0);
-        s.setIdBrach(Integer.parseInt(riga[0]));
+        String[] riga = result.get(0);
+        s.setIdBranch(Integer.parseInt(riga[0]));
         s.setName(riga[1]);
         s.setAddress(riga[2]);
         s.setSchedule(riga[3]);
@@ -34,7 +31,7 @@ public class BranchDAO {
         s.setBank(d.findbyIdBank(Integer.parseInt(riga[5])));
 
         return s;
-}
+    }
 
     public Branch findbyIdBranch(int idBranch) {
         Branch s = new Branch();
@@ -42,7 +39,7 @@ public class BranchDAO {
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Branch WHERE idBranch='" + idBranch + "' ");
         if(result.size() == 0) return null;
         String[] riga = result.get(0);
-        s.setIdBrach(Integer.parseInt(riga[0]));
+        s.setIdBranch(Integer.parseInt(riga[0]));
         s.setName(riga[1]);
         s.setAddress(riga[2]);
         s.setSchedule(riga[3]);
@@ -57,7 +54,7 @@ public class BranchDAO {
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Branch WHERE idBranch='" + idBank + "' ");
         if(result.size() == 0) return null;
         String[] riga = result.get(0);
-        s.setIdBrach(Integer.parseInt(riga[0]));
+        s.setIdBranch(Integer.parseInt(riga[0]));
         s.setName(riga[1]);
         s.setAddress(riga[2]);
         s.setSchedule(riga[3]);
