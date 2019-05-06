@@ -39,47 +39,46 @@ public class LoginListener implements ActionListener {
         if (sorgenteEvento.equals(LOGIN)) {
             String username = frame.getLoginPnl().getTextUser().getText();
             String password = frame.getLoginPnl().getTextPassword().getText();
-            LoginBusiness l = new LoginBusiness();
-            User user = l.login(username, password);
+            try {
+                LoginBusiness l = new LoginBusiness();
+                User user = l.login(username, password);
 
-            if (user.getIdUser() == 0)
-                JOptionPane.showMessageDialog(null, "Registrati");
-            else {
-                switch (user.getType()) {
-                    case (1):
-                        loginPanel.getloginPanel().setVisible(false);
-                        //TODO administrator panel
-                        break;
 
-                    case (2):
-                        loginPanel.getloginPanel().setVisible(false);
-                        //TODO director panel
-                        break;
-                    case (3):
-                        loginPanel.getloginPanel().setVisible(false);
-                        //TODO cashier panel
-                        break;
-                    case(4):
-                        loginPanel.getloginPanel().setVisible(false);
-                        //TODO custoner panel
-                        break;
+                if (user.getAuthorization() == 1) {
+                    switch (user.getType()) {
+                        case (1):
+                            loginPanel.getloginPanel().setVisible(false);
+                            //TODO administrator panel
+                            break;
 
-                    default:
-                        JOptionPane.showMessageDialog(null, "Devi attendere che l'amministratore ti autorizzi");
-                }
+                        case (2):
+                            loginPanel.getloginPanel().setVisible(false);
+                            //TODO director panel
+                            break;
+                        case (3):
+                            loginPanel.getloginPanel().setVisible(false);
+                            //TODO cashier panel
+                            break;
+                        case (4):
+                            loginPanel.getloginPanel().setVisible(false);
+                            //TODO custoner panel
+                            break;
+                    }
 
+                } else JOptionPane.showMessageDialog(null, "Attendi che l'amministratore ti autorizzi");
+
+            } catch (Exception e1) {
+                JOptionPane.showMessageDialog(null, "Credenziali errate. Se non sei ancora cliente, registrati.");
             }
-
         }
 
-
         if (sorgenteEvento.equals(BACK)) {
-            String username = frame.getLoginPnl().getTextUser().getText();
             frame.getLoginPnl().getloginPanel().setVisible(false);
             frame.getHomePnl().getHomePanel().setVisible(true);
 
         }
 
-    }
+        }
+
 }
 
