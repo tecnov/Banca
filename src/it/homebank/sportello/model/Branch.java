@@ -12,8 +12,8 @@ public class Branch {
     Bank bank; /*indica di quale bank è la filiale*/
 
 
-    public Branch(int idBrach, String name, String address, String schedule, String photo, Bank bank) {
-        this.idBranch = idBrach;
+    public Branch(int idBranch, String name, String address, String schedule, String photo, Bank bank) {
+        this.idBranch = idBranch;
         this.name = name;
         this.bank = bank;
         this.address = address;

@@ -15,7 +15,7 @@ public class Frame extends JFrame {
     CashierPanel cashierPnl = new CashierPanel();
     CustomerPanel customerPnl = new CustomerPanel();
     TestPanel testPnl = new TestPanel();
-    PendingRequestPanel pendingRequestPanel = new PendingRequestPanel();
+    PendingRequestPanel pendingRequestPnl = new PendingRequestPanel();
     //Home2Panel home2Panel = new Home2Panel();
 
     /**
@@ -47,7 +47,7 @@ public class Frame extends JFrame {
         centroPnl.add(testPnl.getTestPanel());
 //        centroPnl.add(home2Panel.getHome2Panel());
         centroPnl.add(customerPnl.getCustomerPanel());
-
+        centroPnl.add(pendingRequestPnl.getPendingRequestPanel());
 
 
         rootPanel.add(centroPnl, BorderLayout.CENTER);
@@ -78,6 +78,8 @@ public class Frame extends JFrame {
         loginPnl.getBackButton().setActionCommand(loginListener.BACK);
         registrationPnl.getBackButton().addActionListener(registrationListener);
         registrationPnl.getBackButton().setActionCommand(registrationListener.BACK);
+        registrationPnl.getCompleteButton().addActionListener(registrationListener);
+        registrationPnl.getCompleteButton().setActionCommand(registrationListener.COMPLETE);
         homePnl.getRegistrationButton().addActionListener(homeListener);
         homePnl.getRegistrationButton().setActionCommand(homeListener.REGISTER);
         homePnl.getLoginButton().addActionListener(homeListener);
@@ -162,11 +164,11 @@ public class Frame extends JFrame {
         this.customerPnl = customerPnl;
     }
 
-    public PendingRequestPanel getPendingRequestPanel() {
-        return pendingRequestPanel;
+    public PendingRequestPanel getPendingRequestPnl() {
+        return pendingRequestPnl;
     }
 
-    public void setPendingRequestPanel(PendingRequestPanel pendingRequestPanel) {
-        this.pendingRequestPanel = pendingRequestPanel;
+    public void setPendingRequestPnl(PendingRequestPanel pendingRequestPanel) {
+        this.pendingRequestPnl = pendingRequestPanel;
     }
 }

@@ -18,7 +18,7 @@ public class RegistrationPanel {
 
     public RegistrationPanel() {
         registrationPanel.getUI();
-        registrationPanel.setVisible(true);
+        registrationPanel.setVisible(false);
     }
 
     public JPanel getRegistrationPanel() {
@@ -45,12 +45,12 @@ public class RegistrationPanel {
         this.textPassword = textPassword;
     }
 
-    public JButton getConfermaButton() {
+    public JButton getCompleteButton() {
         return completeButton;
     }
 
-    public void setConfermaButton(JButton confermaButton) {
-        this.completeButton = confermaButton;
+    public void setCompleteButton(JButton completeButton) {
+        this.completeButton = completeButton;
     }
 
     public JButton getBackButton() {
