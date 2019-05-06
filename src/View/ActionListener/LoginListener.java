@@ -6,6 +6,8 @@ import View.Panel.UserPanel;
 
 
 import it.homebank.sportello.Business.LoginBusiness;
+import it.homebank.sportello.model.User;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -38,14 +40,34 @@ public class LoginListener implements ActionListener {
             String username = frame.getLoginPnl().getTextUser().getText();
             String password = frame.getLoginPnl().getTextPassword().getText();
             LoginBusiness l = new LoginBusiness();
+            User user = l.login(username, password);
 
-            if (l.login(username, password).equals(null))
+            if (user.getIdUser() == 0)
                 JOptionPane.showMessageDialog(null, "Registrati");
-            else { //TODO bisogno mettere i pannelli dei vari attori
-              //  if ()
-                JOptionPane.showMessageDialog(null, "Benvenuto");
-                loginPanel.getloginPanel().setVisible(false);
-                utentepanel.getUserPnl().setVisible(true);
+            else {
+                switch (user.getType()) {
+                    case (1):
+                        loginPanel.getloginPanel().setVisible(false);
+                        //TODO administrator panel
+                        break;
+
+                    case (2):
+                        loginPanel.getloginPanel().setVisible(false);
+                        //TODO director panel
+                        break;
+                    case (3):
+                        loginPanel.getloginPanel().setVisible(false);
+                        //TODO cashier panel
+                        break;
+                    case(4):
+                        loginPanel.getloginPanel().setVisible(false);
+                        //TODO custoner panel
+                        break;
+
+                    default:
+                        JOptionPane.showMessageDialog(null, "Devi attendere che l'amministratore ti autorizzi");
+                }
+
             }
 
         }

@@ -67,7 +67,7 @@ public class UserDAO {
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM user WHERE username='" + username + "' AND password='" + password + "'");
 
         if(result.size() == 0) {
-            JOptionPane.showMessageDialog(null, "nessun utente con questo username e password");
+          //  JOptionPane.showMessageDialog(null, "nessun utente con questo username e password");
             return null;
         }
         Branch b = new Branch();
