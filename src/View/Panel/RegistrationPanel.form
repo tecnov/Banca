@@ -1,155 +1,176 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="View.Panel.RegistrationPanel">
-  <grid id="27dc6" binding="registrationPanel" layout-manager="GridLayoutManager" row-count="14" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-    <margin top="0" left="0" bottom="0" right="0"/>
+  <grid id="27dc6" binding="registrationPanel" layout-manager="GridBagLayout">
     <constraints>
       <xy x="20" y="20" width="500" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <component id="7edd9" class="javax.swing.JButton" binding="confermaButton">
+      <component id="9da0a" class="javax.swing.JLabel" binding="usernameLabel">
         <constraints>
-          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="2" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Conferma"/>
-        </properties>
-      </component>
-      <component id="41f94" class="javax.swing.JButton" binding="backButton" default-binding="true">
-        <constraints>
-          <grid row="2" column="0" row-span="10" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Back"/>
-        </properties>
-      </component>
-      <component id="f519e" class="javax.swing.JTextField" binding="textCAP">
-        <constraints>
-          <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="4e891" class="javax.swing.JTextField" binding="textEmail">
-        <constraints>
-          <grid row="9" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="5821d" class="javax.swing.JTextField" binding="textSurname">
-        <constraints>
-          <grid row="7" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <component id="29c6f" class="javax.swing.JTextField" binding="textName">
-        <constraints>
-          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-            <preferred-size width="150" height="-1"/>
-          </grid>
-        </constraints>
-        <properties/>
-      </component>
-      <vspacer id="f4e">
-        <constraints>
-          <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
-      <vspacer id="16059">
-        <constraints>
-          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
-      <vspacer id="171a1">
-        <constraints>
-          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
-      <vspacer id="5f2c3">
-        <constraints>
-          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
-      <vspacer id="d7117">
-        <constraints>
-          <grid row="10" column="2" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
-        </constraints>
-      </vspacer>
-      <component id="e6273" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties>
           <text value="Insert Username"/>
         </properties>
       </component>
-      <component id="3b038" class="javax.swing.JLabel">
+      <hspacer id="26ddf">
         <constraints>
-          <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="1" hsize-policy="6" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-        <properties>
-          <text value="Insert Password"/>
-        </properties>
-      </component>
-      <component id="8140d" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Insert Name"/>
-        </properties>
-      </component>
-      <component id="e4fa3" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Insert Surname"/>
-        </properties>
-      </component>
-      <component id="a64f" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="9" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="Insert Email"/>
-        </properties>
-      </component>
-      <component id="3e84a" class="javax.swing.JLabel">
-        <constraints>
-          <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties>
-          <text value="CAP"/>
-        </properties>
-      </component>
-      <component id="7b7a1" class="javax.swing.JTextField" binding="textUser">
+      </hspacer>
+      <component id="f6702" class="javax.swing.JTextField" binding="usernameField">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-        <properties/>
+        <properties>
+          <toolTipText value=""/>
+        </properties>
       </component>
-      <vspacer id="1668e">
+      <component id="53cc" class="javax.swing.JLabel" binding="passwordLabel">
         <constraints>
-          <grid row="1" column="2" row-span="2" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
-      </vspacer>
-      <component id="39a85" class="javax.swing.JTextField" binding="textPassword">
+        <properties>
+          <text value="insert Password"/>
+        </properties>
+      </component>
+      <component id="8ff32" class="javax.swing.JLabel" binding="nameLabel">
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="insert name"/>
+        </properties>
+      </component>
+      <component id="62a40" class="javax.swing.JPasswordField" binding="passwordField">
+        <constraints>
+          <grid row="1" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="57a9" class="javax.swing.JLabel" binding="surnameLabel">
+        <constraints>
+          <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="insert surname"/>
+        </properties>
+      </component>
+      <component id="826ef" class="javax.swing.JTextField" binding="surnameField">
         <constraints>
           <grid row="3" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
             <preferred-size width="150" height="-1"/>
           </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="86e4b" class="javax.swing.JLabel" binding="emailLabel">
+        <constraints>
+          <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="insert your email"/>
+        </properties>
+      </component>
+      <component id="b0f3" class="javax.swing.JTextField" binding="emailField">
+        <constraints>
+          <grid row="4" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value=""/>
+        </properties>
+      </component>
+      <component id="5d001" class="javax.swing.JTextField" binding="nameField">
+        <constraints>
+          <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+            <preferred-size width="150" height="-1"/>
+          </grid>
+          <gridbag weightx="0.0" weighty="0.0"/>
         </constraints>
         <properties/>
       </component>
+      <component id="37be7" class="javax.swing.JComboBox" binding="bankComboBox">
+        <constraints>
+          <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <model/>
+        </properties>
+      </component>
+      <component id="9a60d" class="javax.swing.JLabel" binding="bankLabel">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="choose  bank"/>
+        </properties>
+      </component>
+      <component id="b96a9" class="javax.swing.JComboBox" binding="branchComboBox">
+        <constraints>
+          <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <model/>
+        </properties>
+      </component>
+      <component id="f7fed" class="javax.swing.JLabel" binding="branchLabel">
+        <constraints>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="choose branch"/>
+        </properties>
+      </component>
+      <component id="466f5" class="javax.swing.JButton" binding="confirmButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Confirm"/>
+        </properties>
+      </component>
+      <component id="a62c2" class="javax.swing.JButton" binding="backButton" default-binding="true">
+        <constraints>
+          <grid row="8" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+        <properties>
+          <text value="Back"/>
+        </properties>
+      </component>
+      <vspacer id="eb20e">
+        <constraints>
+          <grid row="7" column="1" row-span="1" col-span="1" vsize-policy="6" hsize-policy="1" anchor="0" fill="2" indent="0" use-parent-layout="false"/>
+          <gridbag weightx="0.0" weighty="0.0"/>
+        </constraints>
+      </vspacer>
     </children>
   </grid>
 </form>

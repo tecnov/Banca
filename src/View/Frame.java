@@ -8,15 +8,13 @@ import java.awt.*;
 
 public class Frame extends JFrame {
 
-    HomePanel homePnl = new HomePanel();
     LoginPanel loginPnl = new LoginPanel();
     RegistrationPanel registrationPnl = new RegistrationPanel();
     AdministratorPanel administratorPnl = new AdministratorPanel();
     CashierPanel cashierPnl = new CashierPanel();
     CustomerPanel customerPnl = new CustomerPanel();
-    TestPanel testPnl = new TestPanel();
-    PendingRequestPanel pendingRequestPanel = new PendingRequestPanel();
-    Home2Panel home2Panel = new Home2Panel();
+    PendingRequestPanel pendingRequestPnl = new PendingRequestPanel();
+    HomePanel homePnl = new HomePanel();
 
     /**
      * Serve a costruire l'interfaccia
@@ -40,12 +38,11 @@ public class Frame extends JFrame {
 
         centroPnl.add(loginPnl.getloginPanel());
         centroPnl.add(registrationPnl.getRegistrationPanel());
-        centroPnl.add(homePnl.getHomePnl());
         centroPnl.add(administratorPnl.getAdministratorPanel());
         centroPnl.add(cashierPnl.getCashierPanel());
         centroPnl.add(cashierPnl.getCashierPanel());
-        centroPnl.add(testPnl.getTestPanel());
-        centroPnl.add(home2Panel.getHome2Panel());
+        centroPnl.add(homePnl.getHomePanel());
+        centroPnl.add(registrationPnl.getRegistrationPanel());
 
 
 
@@ -69,8 +66,7 @@ public class Frame extends JFrame {
         LoginListener loginListener = new LoginListener(this);
         RegistrationListener registrationListener = new RegistrationListener(this);
         HomeListener homeListener = new HomeListener(this);
-        TestListener testListener = new TestListener(this);
-        Home2Listener home2Listener = new Home2Listener(this);
+        HomeListener home2Listener = new HomeListener(this);
 
         loginPnl.getConfermaButton().addActionListener(loginListener);
         loginPnl.getConfermaButton().setActionCommand(loginListener.LOGIN);
@@ -78,25 +74,18 @@ public class Frame extends JFrame {
         loginPnl.getBackButton().setActionCommand(loginListener.BACK);
         registrationPnl.getBackButton().addActionListener(registrationListener);
         registrationPnl.getBackButton().setActionCommand(registrationListener.BACK);
-        homePnl.getRegistrationButton().addActionListener(homeListener);
-        homePnl.getRegistrationButton().setActionCommand(homeListener.REGISTER);
-        homePnl.getLoginButton().addActionListener(homeListener);
-        homePnl.getLoginButton().setActionCommand(homeListener.LOGIN);
-        testPnl.getTestButton().addActionListener(testListener);
-        testPnl.getTestButton().setActionCommand(testListener.TEST);
-        home2Panel.getLoginButton().addActionListener(home2Listener);
-        home2Panel.getLoginButton().setActionCommand(home2Listener.LOGIN);
+        registrationPnl.getConfirmButton().addActionListener(registrationListener);
+        registrationPnl.getConfirmButton().setActionCommand(registrationListener.CONFIRM);
+        registrationPnl.getBankComboBox().addItemListener(registrationListener);
+        homePnl.getLoginButton().addActionListener(home2Listener);
+        homePnl.getLoginButton().setActionCommand(home2Listener.LOGIN);
+        homePnl.getRegistrationButton().addActionListener(home2Listener);
+        homePnl.getRegistrationButton().setActionCommand(home2Listener.REGISTRATION);
 
     }
 
 
-    public Home2Panel getHome2Panel() {
-        return home2Panel;
-    }
 
-    public void setHome2Panel(Home2Panel home2Panel) {
-        this.home2Panel = home2Panel;
-    }
 
     public JPanel getCentroPnl() {
         return centroPnl;
@@ -105,9 +94,7 @@ public class Frame extends JFrame {
     public LoginPanel getLoginPnl() {
         return loginPnl;
     }
-    public RegistrationPanel getRegistrationPnl() {
-        return registrationPnl;
-    }
+
 
     public void show() {
         view.setVisible(true);
@@ -129,13 +116,6 @@ public class Frame extends JFrame {
         this.administratorPnl = administratorPnl;
     }
 
-    public TestPanel getTestPnl() {
-        return testPnl;
-    }
-
-    public void setTestPnl(TestPanel testPnl) {
-        this.testPnl = testPnl;
-    }
 
     public void setLoginPnl(LoginPanel loginPnl) {
         this.loginPnl = loginPnl;
@@ -144,6 +124,11 @@ public class Frame extends JFrame {
     public void setRegistrationPnl(RegistrationPanel registrationPnl) {
         this.registrationPnl = registrationPnl;
     }
+
+    public RegistrationPanel getRegistrationPnl() {
+        return registrationPnl;
+    }
+
 
     public CashierPanel getCashierPnl() {
         return cashierPnl;
@@ -161,11 +146,12 @@ public class Frame extends JFrame {
         this.customerPnl = customerPnl;
     }
 
-    public PendingRequestPanel getPendingRequestPanel() {
-        return pendingRequestPanel;
+    public PendingRequestPanel getPendingRequestPnl() {
+        return pendingRequestPnl;
     }
 
-    public void setPendingRequestPanel(PendingRequestPanel pendingRequestPanel) {
-        this.pendingRequestPanel = pendingRequestPanel;
+    public void setPendingRequestPnl(PendingRequestPanel pendingRequestPnl) {
+        this.pendingRequestPnl = pendingRequestPnl;
     }
+
 }

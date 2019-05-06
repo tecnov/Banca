@@ -50,4 +50,19 @@ public class BankDAO {
 
 
     }
+
+    public Bank findbyName(String nameBank) {
+        Bank s = new Bank();
+        User u = new User();
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Bank WHERE name='" + nameBank + "' ");
+        if (result.size() == 0) return null;
+        String[] riga = result.get(0);
+        s.setIdBank(Integer.parseInt(riga[0]));
+        s.setName(riga[1]);
+        s.setAddress(riga[2]);
+        s.setDescription(riga[3]);
+        s.setPhoto(riga[4]);
+        return s;
+
+    }
 }

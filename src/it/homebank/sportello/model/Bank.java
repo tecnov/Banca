@@ -76,4 +76,11 @@ public class Bank {
         BankDAO sDAO = new BankDAO();
         return sDAO.findAll();
     }
+
+    public static Bank findbyName(String nameBank) {
+        BankDAO sDAO = new BankDAO();
+        return sDAO.findbyName(nameBank);
+    }
+
+
 }

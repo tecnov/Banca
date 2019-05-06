@@ -1,34 +1,45 @@
 package View.Panel;
+
 import javax.swing.*;
-
-
 
 public class HomePanel {
     public JPanel homePanel;
+    private JComboBox allBank;
+    private JComboBox branchOfBank;
+    private JButton loginButton;
+    private JButton registrationButton;
+    private JLabel jLabelBank;
+    private JLabel jLabelBranch;
 
+    public HomePanel() {
+       homePanel.getUI();
+        homePanel.setVisible(true);
 
-    public JButton loginButton;
-    public JButton registrationButton;
-    private JButton lavoraConNoiButton;
-
-
-
-
-
-    public HomePanel () {
-        homePanel.getUI();
-        homePanel.setVisible(false);
     }
 
-
-    public JPanel getHomePnl() {
+    public JPanel getHomePanel() {
         return homePanel;
     }
 
-    public void setHomePnl(JPanel homePnl) {
-        this.homePanel = homePnl;
+    public void setHomePanel(JPanel homePanel) {
+        this.homePanel = homePanel;
     }
 
+    public JComboBox getAllBank() {
+        return allBank;
+    }
+
+    public void setAllBank(JComboBox allBank) {
+        this.allBank = allBank;
+    }
+
+    public JComboBox getBranchOfBank() {
+        return branchOfBank;
+    }
+
+    public void setBranchOfBank(JComboBox branchOfBank) {
+        this.branchOfBank = branchOfBank;
+    }
 
     public JButton getLoginButton() {
         return loginButton;
@@ -46,20 +57,19 @@ public class HomePanel {
         this.registrationButton = registrationButton;
     }
 
-
-    public JPanel getHomePanel() {
-        return homePanel;
+    public JLabel getjLabelBank() {
+        return jLabelBank;
     }
 
-    public void setHomePanel(JPanel homePanel) {
-        this.homePanel = homePanel;
+    public void setjLabelBank(JLabel jLabelBank) {
+        this.jLabelBank = jLabelBank;
     }
 
-    public JButton getLavoraConNoiButton() {
-        return lavoraConNoiButton;
+    public JLabel getjLabelBranch() {
+        return jLabelBranch;
     }
 
-    public void setLavoraConNoiButton(JButton lavoraConNoiButton) {
-        this.lavoraConNoiButton = lavoraConNoiButton;
+    public void setjLabelBranch(JLabel jLabelBranch) {
+        this.jLabelBranch = jLabelBranch;
     }
 }
