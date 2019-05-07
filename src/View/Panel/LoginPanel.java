@@ -15,7 +15,7 @@ public class LoginPanel {
         loginPanel.setVisible(false);
     }
 
-    public JPanel getloginPanel() {
+    public JPanel getLoginPanel() {
         return loginPanel;
     }
 
@@ -47,9 +47,6 @@ public class LoginPanel {
         this.logButton = logButton;
     }
 
-    public JPanel getLoginPanel() {
-        return loginPanel;
-    }
 
     public JButton getBackButton() {
         return backButton;

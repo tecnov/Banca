@@ -19,6 +19,31 @@ public class UserDAO {
         return instance;
     }
 
+    public static ArrayList<User> findbyAuthorization() {
+        ArrayList<User> pending = new ArrayList<User>();
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM User WHERE authentication= '0' ");
+        Iterator<String[]> i = result.iterator();
+        while(i.hasNext()){ //continua ad incrementare finché non trova l'elemento successivo oppure se l'elemento successivo è un'eccezione
+            String[] riga = i.next();
+            User s = new User();
+            Branch b = new Branch();
+            s.setIdUser(Integer.parseInt(riga[0]));
+            s.setUsername(riga[1]);
+            s.setPassword(riga[2]);
+            s.setName(riga[3]);
+            s.setSurname(riga[4]);
+            s.setEmail(riga[5]);
+            s.setType(Integer.parseInt(riga[6]));
+            s.setAuthorization(Integer.parseInt(riga[7]));
+            s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[7])));
+            pending.add(s);}
+        return pending;
+    }
+
+
+
+
+
     public ArrayList<User> findAll() {
 
         ArrayList<User> registrato = new ArrayList<User>();
@@ -95,7 +120,7 @@ public class UserDAO {
         idBranch = branch.getIdBranch();
 
 
-        String sql = "INSERT INTO `User` (`username`, `password`, `name`, `surname`, `email`, `Branch_idBranch`) VALUES ( '"+ user.getUsername() +"', '"+ user.getPassword() +"', '"+ user.getName() +"', '"+ user.getSurname() +"', '"+ user.getEmail()+"', '"+ idBranch+"')";
+        String sql = "INSERT INTO `User` (`username`, `password`, `name`, `surname`, `email`, `type`, `authentication`, `Branch_idBranch`) VALUES ( '"+ user.getUsername() +"', '"+ user.getPassword() +"', '"+ user.getName() +"', '"+ user.getSurname() +"', '"+ user.getEmail() + "', '"+ user.getType() +"','"+ user.getAuthorization() +"', '"+ idBranch +"')";
 
       return DbConnection.getInstance().eseguiAggiornamento(sql);
 
