@@ -72,4 +72,19 @@ public class BranchDAO {
         }
         return branch;
     }
+
+    public boolean create(Branch branch) {
+
+        Bank bank;
+        int idBank;
+        bank = branch.getBank();
+        idBank = bank.getIdBank();
+
+
+        String sql = "INSERT INTO `branch` (`name`, `address`, `schedule`, `photo`, `Bank_idBank`) VALUES ('"+ branch.getName() +"', '"+ branch.getAddress() +"', '"+ branch.getSchedule() +"', '"+ branch.getPhoto() +"', '"+ idBank +"');";
+
+        return DbConnection.getInstance().eseguiAggiornamento(sql);
+
+
+    }
 }

@@ -92,4 +92,9 @@ public class Branch {
         BranchDAO sDAO = new BranchDAO();
         return sDAO.findbyIdBank(idBank);
     }
+
+    public boolean createNewBranch(Branch branch) {
+        BranchDAO sDAO = new BranchDAO();
+        return sDAO.create(branch);
+    }
 }

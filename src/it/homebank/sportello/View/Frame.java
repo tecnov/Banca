@@ -1,7 +1,7 @@
-package View;
+package it.homebank.sportello.View;
 
-import View.ActionListener.*;
-import View.Panel.*;
+import it.homebank.sportello.View.ActionListener.*;
+import it.homebank.sportello.View.Panel.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -15,6 +15,7 @@ public class Frame extends JFrame {
     CustomerPanel customerPnl = new CustomerPanel();
     PendingRequestPanel pendingRequestPnl = new PendingRequestPanel();
     HomePanel homePnl = new HomePanel();
+    NewBankPanel newBankPnl = new NewBankPanel();
 
     /**
      * Serve a costruire l'interfaccia
@@ -41,7 +42,7 @@ public class Frame extends JFrame {
         centroPnl.add(administratorPnl.getAdministratorPanel());
         centroPnl.add(cashierPnl.getCashierPanel());
         centroPnl.add(homePnl.getHomePanel());
-
+        centroPnl.add(newBankPnl.getNewBankPanel());
 
 
 
@@ -151,4 +152,11 @@ public class Frame extends JFrame {
         this.pendingRequestPnl = pendingRequestPnl;
     }
 
+    public NewBankPanel getNewBankPnl() {
+        return newBankPnl;
+    }
+
+    public void setNewBankPnl(NewBankPanel newBankPnl) {
+        this.newBankPnl = newBankPnl;
+    }
 }

@@ -65,4 +65,18 @@ public class BankDAO {
         return s;
 
     }
+
+    public boolean create(Bank bank) {
+
+        String sql = "INSERT INTO `Bank` (`name`, `address`, `description`, `photo`) VALUES ( '"+ bank.getName() +"', '"+ bank.getAddress() +"', '"+ bank.getDescription() +"', '"+ bank.getPhoto() +"')";
+
+        return DbConnection.getInstance().eseguiAggiornamento(sql);
+
+    }
+
+    public ArrayList<String[]> checkDuplicateName(String name) {
+
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Bank WHERE name='" + name + "'");
+        return result;
+    }
 }

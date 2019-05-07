@@ -1,5 +1,6 @@
 package it.homebank.sportello.Business;
 
+import it.homebank.sportello.DAO.BankDAO;
 import it.homebank.sportello.DAO.BranchDAO;
 import it.homebank.sportello.DAO.UserDAO;
 import it.homebank.sportello.model.Branch;
@@ -33,7 +34,7 @@ public class RegistrationBusiness {
         return tmpBranch;
     }
 
-    public boolean checkDuplicate(String username) {
+    public boolean checkDuplicateUsername(String username) {
 
         UserDAO sDAO = new UserDAO();
         ArrayList a = sDAO.checkDuplicateUsername(username);
@@ -41,5 +42,13 @@ public class RegistrationBusiness {
         else return false;
     }
 
+    public boolean checkDuplicateBankName(String name) {
+
+        BankDAO sDAO = new BankDAO();
+        ArrayList a = sDAO.checkDuplicateName(name);
+        if(a.size() == 0) return true;
+        else return false;
+    }
 }
+
 

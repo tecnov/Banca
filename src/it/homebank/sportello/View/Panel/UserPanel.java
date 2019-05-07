@@ -1,4 +1,4 @@
-package View.Panel;
+package it.homebank.sportello.View.Panel;
 
 import it.homebank.sportello.model.User;
 

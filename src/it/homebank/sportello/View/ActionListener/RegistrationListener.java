@@ -1,6 +1,6 @@
-package View.ActionListener;
+package it.homebank.sportello.View.ActionListener;
 
-import View.Frame;
+import it.homebank.sportello.View.Frame;
 import it.homebank.sportello.Business.RegistrationBusiness;
 import it.homebank.sportello.model.Bank;
 import it.homebank.sportello.model.Branch;
@@ -42,13 +42,12 @@ public class RegistrationListener implements ActionListener, ItemListener {
             String surname = frame.getRegistrationPnl().getSurnameField().getText();
             String email = frame.getRegistrationPnl().getEmailField().getText();
             String branchString = (String) frame.getRegistrationPnl().getBranchComboBox().getSelectedItem();
-            if (registrationBusiness.checkDuplicate(username) == false) {
+            if (registrationBusiness.checkDuplicateUsername(username) == false) {
                 JOptionPane.showMessageDialog(null, "Username già esistente");
             } else {
-
                 Branch branch = registrationBusiness.findBranchbyName(branchString);
                 registrationBusiness.userRegistration(name, surname, username, password, email, branch);
-                   JOptionPane.showMessageDialog(null, "La sua richiesta verrà analizzata dall'amministratore");
+                JOptionPane.showMessageDialog(null, "La sua richiesta verrà analizzata dall'amministratore");
 
             }
         }

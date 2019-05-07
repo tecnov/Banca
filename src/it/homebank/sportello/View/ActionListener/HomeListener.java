@@ -1,6 +1,6 @@
-package View.ActionListener;
+package it.homebank.sportello.View.ActionListener;
 
-import View.Frame;
+import it.homebank.sportello.View.Frame;
 import it.homebank.sportello.Business.RegistrationBusiness;
 import it.homebank.sportello.model.Bank;
 

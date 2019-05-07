@@ -139,8 +139,6 @@ public class UserDAO {
 
         String sql =" DELETE FROM `db_bank`.`user` WHERE (`idUser` = '"+  user.getIdUser() +"')";
         return DbConnection.getInstance().eseguiAggiornamento(sql);
-
-
     }
 
     public ArrayList<String[]> checkDuplicateUsername(String username) {

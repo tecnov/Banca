@@ -1,4 +1,4 @@
-package View.Panel;
+package it.homebank.sportello.View.Panel;
 
 import javax.swing.*;
 
