@@ -80,6 +80,7 @@ public class UserDAO {
         s.setSurname(riga[4]);
         s.setEmail(riga[5]);
         s.setType(Integer.parseInt(riga[6]));
+
         s.setAuthorization(Integer.parseInt(riga[7]));
         s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[7])));
         return s;

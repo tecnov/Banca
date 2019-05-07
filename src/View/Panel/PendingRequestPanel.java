@@ -7,10 +7,14 @@ public class PendingRequestPanel {
     private JComboBox pendingRequestComboBox;
     private JButton acceptButton;
     private JButton denyButton;
+    private JLabel customersLabel;
+    private JTextArea userInformationTextArea;
+
+
 
     public PendingRequestPanel() {
         pendingRequestPanel.getUI();
-        pendingRequestPanel.setVisible(false);
+        pendingRequestPanel.setVisible(true);
 
     }
 
@@ -45,7 +49,25 @@ public class PendingRequestPanel {
     public void setDenyButton(JButton denyButton) {
         this.denyButton = denyButton;
     }
+
+    public JLabel getCustomersLabel() {
+        return customersLabel;
+    }
+
+    public void setCustomersLabel(JLabel customersLabel) {
+        this.customersLabel = customersLabel;
+    }
+
+    public JTextArea getUserInformationTextArea() {
+        return userInformationTextArea;
+    }
+
+    public void setUserInformationTextArea(JTextArea userInformationTextArea) {
+        this.userInformationTextArea = userInformationTextArea;
+    }
 }
+
+
 
 
 

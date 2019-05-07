@@ -5,8 +5,8 @@ import javax.swing.*;
 public class LoginPanel {
     public JPanel loginPanel;
     public JTextField textPassword;
-    public JTextField textUser;
-    public JButton confermaButton;
+    public JTextField textUsername;
+    public JButton logButton;
     public JButton backButton;
 
 
@@ -24,11 +24,11 @@ public class LoginPanel {
     }
 
     public JTextField getTextUser() {
-        return textUser;
+        return textUsername;
     }
 
-    public void setTextUser(JTextField textUser) {
-        this.textUser = textUser;
+    public void setTextUser(JTextField textUsername) {
+        this.textUsername= textUsername;
     }
 
     public JTextField getTextPassword() {
@@ -39,12 +39,12 @@ public class LoginPanel {
         this.textPassword = textPassword;
     }
 
-    public JButton getConfermaButton() {
-        return confermaButton;
+    public JButton getLogButton() {
+        return logButton;
     }
 
-    public void setConfermaButton(JButton confermaButton) {
-        this.confermaButton = confermaButton;
+    public void setLogButton(JButton logButton) {
+        this.logButton = logButton;
     }
 
     public JPanel getLoginPanel() {

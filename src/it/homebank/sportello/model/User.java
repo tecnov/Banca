@@ -13,8 +13,9 @@ public class User {
     private String name;
     private String surname;
     private String email;
+    private String CAP;
     private int type;
-    private int authorization;  // se 0 non ancora autenticato. se 1 il cliente è autenticato
+    public int authorization;  // se 0 non ancora autenticato. se 1 il cliente è autenticato
     private Branch branchUser; /*indica a quale filiale appartiene il cliente, se il cliente è di tipo 3 è sia cliente che cassiere */
                                 /*se il direttore è di tipo 3 è sia cliente che direttore*/
 
@@ -27,7 +28,6 @@ public class User {
         this.surname = surname;
         this.email = email;
         this.type = type;
-        this.authorization = authorization;
         this.branchUser = branchUser;
     }
 
@@ -108,7 +108,16 @@ public class User {
     public void setAuthorization(int authorization) {
         this.authorization = authorization;
     }
-//filtering and search
+
+    public String getCAP() {
+        return CAP;
+    }
+
+    public void setCAP(String CAP) {
+        this.CAP = CAP;
+    }
+
+    //filtering and search
 
     public static User findbyIdUser(int idUser) {
         UserDAO sDAO = new UserDAO();

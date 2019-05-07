@@ -67,8 +67,8 @@ public class Frame extends JFrame {
         RegistrationListener registrationListener = new RegistrationListener(this);
         HomeListener homeListener = new HomeListener(this);
 
-        loginPnl.getConfermaButton().addActionListener(loginListener);
-        loginPnl.getConfermaButton().setActionCommand(loginListener.LOGIN);
+        loginPnl.getLogButton().addActionListener(loginListener);
+        loginPnl.getLogButton().setActionCommand(loginListener.LOGIN);
         loginPnl.getBackButton().addActionListener(loginListener);
         loginPnl.getBackButton().setActionCommand(loginListener.BACK);
         registrationPnl.getBackButton().addActionListener(registrationListener);

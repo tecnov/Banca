@@ -9,7 +9,8 @@ import java.util.ArrayList;
 
 public class RegistrationBusiness {
 
-    public User userRegistration( String username, String password, String name, String surname, String email, Branch branchUser){
+
+    public User userRegistration(String username, String password, String name, String surname, String email, Branch branchUser){
 
         User tmpUserRegistration = new User();
 
