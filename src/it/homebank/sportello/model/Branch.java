@@ -2,6 +2,8 @@ package it.homebank.sportello.model;
 
 import it.homebank.sportello.DAO.BranchDAO;
 
+import java.util.ArrayList;
+
 public class Branch {
 
     int idBranch;
@@ -85,8 +87,9 @@ public class Branch {
         Branch s = sDAO.findbyName(name);
         return s;
     }
-    public Branch findbyIdBank (int idBank) {
+
+    public ArrayList<Branch> findbyIdBank (int idBank) {
         BranchDAO sDAO = new BranchDAO();
-        return sDAO.fingbyIdBank (idBank);
+        return sDAO.findbyIdBank(idBank);
     }
 }

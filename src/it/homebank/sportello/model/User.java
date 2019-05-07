@@ -15,7 +15,7 @@ public class User {
     private String email;
     private String CAP;
     private int type;
-    private int authorization;  // se 0 non ancora autenticato. se 1 il cliente è autenticato
+    public int authorization;  // se 0 non ancora autenticato. se 1 il cliente è autenticato
     private Branch branchUser; /*indica a quale filiale appartiene il cliente, se il cliente è di tipo 3 è sia cliente che cassiere */
                                 /*se il direttore è di tipo 3 è sia cliente che direttore*/
 
@@ -28,7 +28,6 @@ public class User {
         this.surname = surname;
         this.email = email;
         this.type = type;
-        this.authorization = authorization;
         this.branchUser = branchUser;
     }
 

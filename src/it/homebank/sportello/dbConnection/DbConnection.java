@@ -66,7 +66,7 @@ public class DbConnection {
             stmt.close();   // Chiudo lo Statement
         } catch (Exception e) {
 
-            //e.printStackTrace();
+            e.printStackTrace();
         }
 
         return v;

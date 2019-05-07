@@ -41,17 +41,12 @@ public class LoginListener implements ActionListener {
 
             if (l.login(username, password).equals(null))
                 JOptionPane.showMessageDialog(null, "Registrati");
-            else {
+            else { //TODO bisogno mettere i pannelli dei vari attori
+              //  if ()
                 JOptionPane.showMessageDialog(null, "Benvenuto");
                 loginPanel.getloginPanel().setVisible(false);
                 utentepanel.getUserPnl().setVisible(true);
             }
-
-           /* if (l.login(username, password).equals(null))
-                JOptionPane.showMessageDialog(null, "Registrati");
-            else {
-                JOptionPane.showMessageDialog(null, "Benvenuto");
-            }*/
 
         }
 
@@ -59,7 +54,7 @@ public class LoginListener implements ActionListener {
         if (sorgenteEvento.equals(BACK)) {
             String username = frame.getLoginPnl().getTextUser().getText();
             frame.getLoginPnl().getloginPanel().setVisible(false);
-            frame.getHomePnl().getHomePnl().setVisible(true);
+            frame.getHomePnl().getHomePanel().setVisible(true);
 
         }
 

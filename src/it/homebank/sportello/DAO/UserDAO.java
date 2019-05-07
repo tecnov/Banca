@@ -88,6 +88,7 @@ public class UserDAO {
 
 
     public boolean create( User user){ /*questa funzione aggiunge un user senza autorizzazione e di tipo cliente*/  //String username, String password, String name, String surname, String email, Branch branchUser
+
         Branch branch;
          int idBranch;
         branch = user.getBranchUser();
@@ -114,6 +115,14 @@ public class UserDAO {
         String sql =" DELETE FROM `db_bank`.`user` WHERE (`idUser` = '"+  user.getIdUser() +"')";
         return DbConnection.getInstance().eseguiAggiornamento(sql);
 
+
+    }
+
+    public ArrayList<String[]> checkDuplicateUsername(String username) {
+
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM user WHERE username='" + username + "'");
+
+         return result;
 
     }
 }
