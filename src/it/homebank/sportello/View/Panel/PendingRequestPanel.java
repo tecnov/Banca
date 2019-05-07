@@ -14,7 +14,7 @@ public class PendingRequestPanel {
 
     public PendingRequestPanel() {
         pendingRequestPanel.getUI();
-        pendingRequestPanel.setVisible(true);
+        pendingRequestPanel.setVisible(false);
 
     }
 

@@ -82,7 +82,7 @@ public class Branch {
         BranchDAO sDAO = new BranchDAO();
         return sDAO.findbyIdBranch(idBranch);
     }
-    public Branch findbyName(String name) {
+    public static Branch findbyName(String name) {
         BranchDAO sDAO = new BranchDAO();
         Branch s = sDAO.findbyName(name);
         return s;
@@ -95,6 +95,6 @@ public class Branch {
 
     public boolean createNewBranch(Branch branch) {
         BranchDAO sDAO = new BranchDAO();
-        return sDAO.create(branch);
+        return sDAO.getInstance().create(branch);
     }
 }

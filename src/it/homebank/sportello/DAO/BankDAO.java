@@ -68,7 +68,7 @@ public class BankDAO {
 
     public boolean create(Bank bank) {
 
-        String sql = "INSERT INTO `Bank` (`name`, `address`, `description`, `photo`) VALUES ( '"+ bank.getName() +"', '"+ bank.getAddress() +"', '"+ bank.getDescription() +"', '"+ bank.getPhoto() +"')";
+        String sql = "INSERT INTO `Bank` (`name`, `address`, `descricption`, `photo`) VALUES ( '"+ bank.getName() +"', '"+ bank.getAddress() +"', '"+ bank.getDescription() +"', '"+ bank.getPhoto() +"')";
 
         return DbConnection.getInstance().eseguiAggiornamento(sql);
 

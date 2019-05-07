@@ -65,6 +65,7 @@ public class Frame extends JFrame {
         LoginListener loginListener = new LoginListener(this);
         RegistrationListener registrationListener = new RegistrationListener(this);
         HomeListener homeListener = new HomeListener(this);
+        AdministratorListener administratorListener = new AdministratorListener(this);
 
         loginPnl.getLogButton().addActionListener(loginListener);
         loginPnl.getLogButton().setActionCommand(loginListener.LOGIN);
@@ -79,7 +80,10 @@ public class Frame extends JFrame {
         homePnl.getLoginButton().setActionCommand(homeListener.LOGIN);
         homePnl.getRegistrationButton().addActionListener(homeListener);
         homePnl.getRegistrationButton().setActionCommand(homeListener.REGISTRATION);
-
+        administratorPnl.getAddNewBankButton().addActionListener(administratorListener);
+        administratorPnl.getAddNewBankButton().setActionCommand(administratorListener.NEWBANKPANEL);
+        newBankPnl.getConfirmButton().addActionListener(administratorListener);
+        newBankPnl.getConfirmButton().setActionCommand(administratorListener.CONFIRM);
     }
 
 

@@ -11,8 +11,8 @@ public class UserPanel {
 
     public UserPanel() {
         userPnl.getUI();
-        Welcometxt.setText("Benvenuto " + user.getName() + user.getSurname()); //TODO questo va nel listner forse
-    }
+        userPnl.setVisible(false);
+            }
 
     public JPanel getUserPnl() {
         return userPnl;

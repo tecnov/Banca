@@ -4,6 +4,7 @@ import it.homebank.sportello.Business.RegistrationBusiness;
 import it.homebank.sportello.View.Frame;
 import it.homebank.sportello.Business.AdministratorBusiness;
 import it.homebank.sportello.model.Bank;
+import it.homebank.sportello.model.Branch;
 import it.homebank.sportello.model.User;
 
 import javax.swing.*;
@@ -11,12 +12,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
-public class AdmistratorListener implements ActionListener {
+public class AdministratorListener implements ActionListener {
     private Frame frame;
 
 
 
-    public AdmistratorListener(Frame frame) {
+    public AdministratorListener(Frame frame) {
         this.frame = frame;
     }
 
@@ -43,9 +44,8 @@ public class AdmistratorListener implements ActionListener {
             frame.getNewBankPnl().getNewBankPanel().setVisible(true);
         }//
 
-        if (sorgenteEvento.equals(CONFIRM)){
+        if (sorgenteEvento.equals(CONFIRM)) {
 
-            Bank bank = new Bank();
 
             AdministratorBusiness administratorBusiness = new AdministratorBusiness();
             RegistrationBusiness registrationBusiness = new RegistrationBusiness();
@@ -55,9 +55,12 @@ public class AdmistratorListener implements ActionListener {
             String descriptionBank = frame.getNewBankPnl().getDescriptionBankTextField().getText();
             String photoPathBank = frame.getNewBankPnl().getPhotoBankTextField().getText();
 
-            if (registrationBusiness.checkDuplicateBankName(nameBank) == false) {
+            if (!registrationBusiness.checkDuplicateBankName(nameBank))
                 JOptionPane.showMessageDialog(null, "Nome della banca già esistente");
-            } else { bank = administratorBusiness.createNewBank(nameBank, addressBank, descriptionBank, photoPathBank);}
+            else if (nameBank.equals(null)) JOptionPane.showMessageDialog(null, "Inserisci il nome della banca");
+            //TODO aggiungi else if per i campi vuoti anche dopo
+
+            else administratorBusiness.createNewBank(nameBank, addressBank, descriptionBank, photoPathBank);
 
 
             String nameBrach = frame.getNewBankPnl().getBranchNameTextField().getText();
@@ -65,8 +68,9 @@ public class AdmistratorListener implements ActionListener {
             String scheduleBranch = frame.getNewBankPnl().getScheduleTextField().getText();
             String photoBranch = frame.getNewBankPnl().getPhotoBranchTextField().getText();
 
-            administratorBusiness.createBranchBank(nameBrach, addressBranch, scheduleBranch, photoBranch, bank);
+            Bank bank =  Bank.findbyName(nameBank);
 
+            administratorBusiness.createBranchBank(nameBrach, addressBranch, scheduleBranch, photoBranch, bank);
 
 
             String username = frame.getNewBankPnl().getUsernameTextField().getText();
@@ -75,9 +79,13 @@ public class AdmistratorListener implements ActionListener {
             String surname = frame.getNewBankPnl().getSurnameTextField().getText();
             String email = frame.getNewBankPnl().getEmailTextField().getText();
 
-            administratorBusiness.newDirector(username, password, name, surname, email);
+            Branch branch = Branch.findbyName(nameBrach);
+
+            if (!registrationBusiness.checkDuplicateUsername(username)) {
+                JOptionPane.showMessageDialog(null, "Username già esistente");
+            } else {
+                administratorBusiness.newDirector(username, password, name, surname, email, branch);
+            }
         }
-
-
     }
 }

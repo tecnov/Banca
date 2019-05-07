@@ -86,6 +86,6 @@ public class Bank {
     //function
     public boolean createNewBank(Bank tmpBankRegistration) {
         BankDAO sDAO = new BankDAO();
-        return sDAO.create(tmpBankRegistration);
+        return sDAO.getInstance().create(tmpBankRegistration);
     }
 }

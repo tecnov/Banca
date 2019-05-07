@@ -49,4 +49,20 @@ public class AdministratorBusiness {
 
         return tmpBranchRegistration;
     }
+
+    public User newDirector(String username, String password, String name, String surname, String email, Branch branch) {
+        User tmpDirector = new User();
+
+        tmpDirector.setUsername(username);
+        tmpDirector.setPassword(password);
+        tmpDirector.setName(name);
+        tmpDirector.setSurname(surname);
+        tmpDirector.setEmail(email);
+        tmpDirector.setAuthorization(1);
+        tmpDirector.setType(2);
+        tmpDirector.setBranchUser(branch);
+        tmpDirector.registration(tmpDirector);
+
+        return tmpDirector;
+    }
 }
