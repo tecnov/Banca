@@ -36,13 +36,11 @@ public class Frame extends JFrame {
 
         // add all panel
 
-        centroPnl.add(loginPnl.getloginPanel());
+        centroPnl.add(loginPnl.getLoginPanel());
         centroPnl.add(registrationPnl.getRegistrationPanel());
         centroPnl.add(administratorPnl.getAdministratorPanel());
         centroPnl.add(cashierPnl.getCashierPanel());
-        centroPnl.add(cashierPnl.getCashierPanel());
         centroPnl.add(homePnl.getHomePanel());
-        centroPnl.add(registrationPnl.getRegistrationPanel());
 
 
 

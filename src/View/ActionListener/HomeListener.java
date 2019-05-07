@@ -20,7 +20,6 @@ public class HomeListener implements ActionListener {
 
     public final static String LOGIN = "Login";
     public final static String REGISTRATION = "new registration";
-    public final static String BACK = "come back";
 
 
     @Override
@@ -46,7 +45,7 @@ public class HomeListener implements ActionListener {
 
         if (sorgenteEvento.equals(LOGIN)) {
             frame.getHomePnl().getHomePanel().setVisible(false);
-            frame.getLoginPnl().getloginPanel().setVisible(true);
+            frame.getLoginPnl().getLoginPanel().setVisible(true);
         }
 
 

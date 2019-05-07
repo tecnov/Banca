@@ -6,7 +6,6 @@ public class AdministratorPanel {
     public JPanel administratorPnl;
 
     public JButton newBankButton;
-    public JButton newDirectorButton;
     public JButton newCustomerButton;
     public JTextArea number;
 
@@ -31,13 +30,7 @@ public class AdministratorPanel {
         this.newBankButton = addNewBankButton;
     }
 
-    public JButton getNewDirectorButton() {
-        return newDirectorButton;
-    }
 
-    public void setNewDirectorButton(JButton newDirectorButton) {
-        this.newDirectorButton = newDirectorButton;
-    }
 
     public JButton getNewCustomerButton() {
         return newCustomerButton;
