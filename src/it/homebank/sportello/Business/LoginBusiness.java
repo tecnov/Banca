@@ -6,8 +6,7 @@ public class LoginBusiness {
 
 
     public User login(String  username, String  password) {
-        User userLogin = new User();
-        userLogin.login(username,password);
+        User userLogin = User.login(username,password);
         return userLogin;
     }
 

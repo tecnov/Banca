@@ -137,7 +137,8 @@ public class User {
 
     public static User login (String username, String password) {
         UserDAO sDAO = new UserDAO();
-        return sDAO.login(username,password);
+        User tmpUser = sDAO.login(username, password);
+        return tmpUser;
     }
 
     public boolean authorization (User user, boolean confirm){
