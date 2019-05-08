@@ -4,19 +4,20 @@ public class Service {
     private int idService;
     private String name;
     private String description;
+    private int type; //1 se è un investimento, 2 se è a pagamento
     private int interest;
-    private int duration;
+    private String duration;
     Bank bank; /*di quale bank è il service*/
 
 
-    public Service(int idService, String name, String description, int interest, int duration, Bank bank) {
+    public Service(int idService, String name, String description, int type, int interest, String duration, Bank bank) {
         this.idService = idService;
         this.name = name;
         this.description = description;
         this.interest = interest;
         this.duration = duration;
         this.bank = bank;
-
+        this.type = type;
     }
 
     public int getIdService() {
@@ -59,11 +60,19 @@ public class Service {
         this.interest = interest;
     }
 
-    public int getDuration() {
+    public String getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
     }
 }

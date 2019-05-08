@@ -37,7 +37,7 @@ public class RegistrationBusiness {
     public boolean checkDuplicateUsername(String username) {
 
         UserDAO sDAO = new UserDAO();
-        ArrayList a = sDAO.checkDuplicateUsername(username);
+        ArrayList a = sDAO.findbyUsername(username);
         if(a.size() == 0) return true;
         else return false;
     }

@@ -1,4 +1,4 @@
-package it.homebank.sportello.View.Panel;
+package it.homebank.sportello.View.Panel.AdministratorPanels;
 
 import javax.swing.*;
 
@@ -9,7 +9,7 @@ public class PendingRequestPanel {
     private JButton denyButton;
     private JLabel customersLabel;
     private JTextArea userInformationTextArea;
-
+    private JButton BackButton;
 
 
     public PendingRequestPanel() {
@@ -62,8 +62,17 @@ public class PendingRequestPanel {
         return userInformationTextArea;
     }
 
+    public JButton getBackButton() {
+        return BackButton;
+    }
+
+    public void setBackButton(JButton backButton) {
+        BackButton = backButton;
+    }
+
     public void setUserInformationTextArea(JTextArea userInformationTextArea) {
         this.userInformationTextArea = userInformationTextArea;
+
     }
 }
 

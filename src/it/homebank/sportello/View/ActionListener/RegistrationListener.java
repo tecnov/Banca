@@ -65,7 +65,6 @@ public class RegistrationListener implements ActionListener, ItemListener {
 
         if (e.getSource() == frame.getRegistrationPnl().getBankComboBox()) {
 
-
             String bankName = (String) frame.getRegistrationPnl().getBankComboBox().getSelectedItem();
             Branch s = new Branch();
             Bank b = Bank.findbyName(bankName);
@@ -76,5 +75,6 @@ public class RegistrationListener implements ActionListener, ItemListener {
                 frame.getRegistrationPnl().getBranchComboBox().addItem(branches.get(i).getName());
             }
         }
+
     }
 }

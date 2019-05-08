@@ -4,9 +4,9 @@ public class Product {
     private int idProduct;
     private String name;
     private String description;
+
     private int price;
-    private String startDate;
-    private String finishDate;
+
     private Bank bank; /*indica di quale bank è il prodotto*/
 
 
@@ -15,8 +15,6 @@ public class Product {
         this.name = name;
         this.description = description;
         this.price = price;
-        this.startDate = startDate;
-        this.finishDate = finishDate;
         this.bank = bank;
 
     }
@@ -61,20 +59,6 @@ public class Product {
         this.price = price;
     }
 
-    public String getStartDate() {
-        return startDate;
-    }
 
-    public void setStartDate(String startDate) {
-        this.startDate = startDate;
-    }
-
-    public String getFinishDate() {
-        return finishDate;
-    }
-
-    public void setFinishDate(String finishDate) {
-        this.finishDate = finishDate;
-    }
 }
 

@@ -2,6 +2,12 @@ package it.homebank.sportello.View;
 
 import it.homebank.sportello.View.ActionListener.*;
 import it.homebank.sportello.View.Panel.*;
+import it.homebank.sportello.View.Panel.AdministratorPanels.AdministratorPanel;
+import it.homebank.sportello.View.Panel.AdministratorPanels.NewBankPanel;
+import it.homebank.sportello.View.Panel.AdministratorPanels.PendingRequestPanel;
+import it.homebank.sportello.View.Panel.AllUser.HomePanel;
+import it.homebank.sportello.View.Panel.AllUser.LoginPanel;
+import it.homebank.sportello.View.Panel.AllUser.RegistrationPanel;
 
 import javax.swing.*;
 import java.awt.*;
@@ -43,6 +49,7 @@ public class Frame extends JFrame {
         centroPnl.add(cashierPnl.getCashierPanel());
         centroPnl.add(homePnl.getHomePanel());
         centroPnl.add(newBankPnl.getNewBankPanel());
+        centroPnl.add(pendingRequestPnl.getPendingRequestPanel());
 
 
 
@@ -81,9 +88,20 @@ public class Frame extends JFrame {
         homePnl.getRegistrationButton().addActionListener(homeListener);
         homePnl.getRegistrationButton().setActionCommand(homeListener.REGISTRATION);
         administratorPnl.getAddNewBankButton().addActionListener(administratorListener);
-        administratorPnl.getAddNewBankButton().setActionCommand(administratorListener.NEWBANKPANEL);
+        administratorPnl.getAddNewBankButton().setActionCommand(administratorListener.NEW_BANK_PANEL);
+        administratorPnl.getNewCustomerButton().addActionListener(administratorListener);
+        administratorPnl.getNewCustomerButton().setActionCommand(administratorListener.PENDING_CUSTOMER);
         newBankPnl.getConfirmButton().addActionListener(administratorListener);
-        newBankPnl.getConfirmButton().setActionCommand(administratorListener.CONFIRM);
+        newBankPnl.getConfirmButton().setActionCommand(administratorListener.CONFIRM_NEW_BANK);
+        newBankPnl.getBackButton().addActionListener(administratorListener);
+        newBankPnl.getBackButton().setActionCommand(administratorListener.BANK_FROM_BANK_TO_HOME);
+        pendingRequestPnl.getPendingRequestComboBox().addItemListener(administratorListener);
+        pendingRequestPnl.getAcceptButton().addActionListener(administratorListener);
+        pendingRequestPnl.getAcceptButton().setActionCommand(administratorListener.CONFIRM_NEW_CUSTOMER);
+        pendingRequestPnl.getDenyButton().addActionListener(administratorListener);
+        pendingRequestPnl.getDenyButton().setActionCommand(administratorListener.DENY_NEW_CUSTOMER);
+        pendingRequestPnl.getBackButton().addActionListener(administratorListener);
+        pendingRequestPnl.getBackButton().setActionCommand(administratorListener.BACK_FROM_REQUEST_TO_HOME);
     }
 
 
@@ -163,4 +181,5 @@ public class Frame extends JFrame {
     public void setNewBankPnl(NewBankPanel newBankPnl) {
         this.newBankPnl = newBankPnl;
     }
+
 }

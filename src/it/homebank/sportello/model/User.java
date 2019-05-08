@@ -2,8 +2,7 @@ package it.homebank.sportello.model;
 
 import it.homebank.sportello.DAO.UserDAO;
 
-import static java.lang.Boolean.FALSE;
-import static java.lang.Boolean.TRUE;
+import java.util.ArrayList;
 
 public class User {
 
@@ -135,11 +134,13 @@ public class User {
 
     public boolean authorization (User user, boolean confirm){
         UserDAO sDAO = new UserDAO();
-        if (confirm == true ) {
-            return sDAO.confirm(user);
-        }
-        else
-            {return sDAO.delete(user);}
+        if (confirm == true ) return sDAO.confirm(user);
+        else return sDAO.delete(user);
+    }
 
+    public ArrayList<User> findNotAuthenticated() {
+        int i = 0;
+        UserDAO sDAO = new UserDAO();
+        return sDAO.findbyAuthentication(i);
     }
 }

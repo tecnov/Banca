@@ -10,15 +10,17 @@ import java.util.ArrayList;
 public class AdministratorBusiness {
 
     public int numPendingRequest(){
+        int i = 0;
         UserDAO s = new UserDAO();
-        ArrayList<User> pendingUser = UserDAO.findbyAuthorization();
+        ArrayList<User> pendingUser = s.findbyAuthentication(i);
         return pendingUser.size();
     }
 
 
     public ArrayList<User> pendingUser() {
+        int i = 0;
         UserDAO s = new UserDAO();
-        ArrayList<User> pendingUser = UserDAO.findbyAuthorization();
+        ArrayList<User> pendingUser = s.findbyAuthentication(i);
         return pendingUser;
 
     }
@@ -64,5 +66,10 @@ public class AdministratorBusiness {
         tmpDirector.registration(tmpDirector);
 
         return tmpDirector;
+    }
+
+    public boolean authorizazion (User user, boolean confirm){
+        User s = new User();
+        return s.authorization(user, confirm);
     }
 }

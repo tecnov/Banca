@@ -1,7 +1,7 @@
 package it.homebank.sportello.View.ActionListener;
 
 import it.homebank.sportello.View.Frame;
-import it.homebank.sportello.View.Panel.LoginPanel;
+import it.homebank.sportello.View.Panel.AllUser.LoginPanel;
 import it.homebank.sportello.View.Panel.UserPanel;
 
 

@@ -19,9 +19,9 @@ public class UserDAO {
         return instance;
     }
 
-    public static ArrayList<User> findbyAuthorization() {
+    public static ArrayList<User> findbyAuthentication(int a) {
         ArrayList<User> pending = new ArrayList<User>();
-        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM User WHERE authentication= '0' ");
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM User WHERE authentication= '" +a+ "' ");
         Iterator<String[]> i = result.iterator();
         while(i.hasNext()){ //continua ad incrementare finché non trova l'elemento successivo oppure se l'elemento successivo è un'eccezione
             String[] riga = i.next();
@@ -35,7 +35,7 @@ public class UserDAO {
             s.setEmail(riga[5]);
             s.setType(Integer.parseInt(riga[6]));
             s.setAuthorization(Integer.parseInt(riga[7]));
-            s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[7])));
+            s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[8])));
             pending.add(s);}
         return pending;
     }
@@ -62,7 +62,7 @@ public class UserDAO {
             s.setEmail(riga[5]);
             s.setType(Integer.parseInt(riga[6]));
             s.setAuthorization(Integer.parseInt(riga[7]));
-            s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[7])));
+            s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[8])));
             registrato.add(s);}
         return registrato;
     }
@@ -82,7 +82,7 @@ public class UserDAO {
         s.setEmail(riga[5]);
         s.setType(Integer.parseInt(riga[6]));
         s.setAuthorization(Integer.parseInt(riga[7]));
-        s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[7])));
+        s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[8])));
         return s;
     }
 
@@ -107,11 +107,42 @@ public class UserDAO {
         s.setType(Integer.parseInt(riga[6]));
 
         s.setAuthorization(Integer.parseInt(riga[7]));
-        s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[7])));
+        s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[8])));
         return s;
     }
 
 
+    public ArrayList<User> findbyUsername(String username) { //TODO va ritestato
+
+        ArrayList<User> usernames = new ArrayList<User>();
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM user WHERE username='" + username + "'");
+        Iterator<String[]> i = result.iterator();
+
+        while(i.hasNext()){ //continua ad incrementare finché non trova l'elemento successivo oppure se l'elemento successivo è un'eccezione
+            String[] riga = i.next();
+            User s = new User();
+            Branch b = new Branch();
+            s.setIdUser(Integer.parseInt(riga[0]));
+            s.setUsername(riga[1]);
+            s.setPassword(riga[2]);
+            s.setName(riga[3]);
+            s.setSurname(riga[4]);
+            s.setEmail(riga[5]);
+            s.setType(Integer.parseInt(riga[6]));
+            s.setAuthorization(Integer.parseInt(riga[7]));
+            s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[8])));
+            usernames.add(s);}
+        return usernames;
+
+    }
+
+
+
+
+
+
+
+    //modify database
     public boolean create( User user){ /*questa funzione aggiunge un user senza autorizzazione e di tipo cliente*/  //String username, String password, String name, String surname, String email, Branch branchUser
 
         Branch branch;
@@ -141,11 +172,7 @@ public class UserDAO {
         return DbConnection.getInstance().eseguiAggiornamento(sql);
     }
 
-    public ArrayList<String[]> checkDuplicateUsername(String username) {
 
-        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM user WHERE username='" + username + "'");
 
-         return result;
 
-    }
 }
