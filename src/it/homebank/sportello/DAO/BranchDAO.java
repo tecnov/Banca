@@ -19,6 +19,8 @@ public class BranchDAO {
         return instance;
 
     }
+
+    //TODO non va bene, ci possono essere più filiali con quel nome. Modificare e testare
     public Branch findbyName(String name) {
         Branch s = new Branch();
         Bank d = new Bank();
@@ -73,6 +75,24 @@ public class BranchDAO {
         return branch;
     }
 
+
+
+    public Branch findbyIdBankandBranchName(String nameBranch, int idBank) {
+        Branch s = new Branch();
+        Bank d = new Bank();
+        ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM Branch WHERE name ='" + nameBranch + "' AND Bank_idBank='" + idBank + "' ");
+        if(result.size() == 0) return null;
+        String[] riga = result.get(0);
+        s.setIdBranch(Integer.parseInt(riga[0]));
+        s.setName(riga[1]);
+        s.setAddress(riga[2]);
+        s.setSchedule(riga[3]);
+        s.setPhoto(riga[4]);
+        s.setBank(d.findbyIdBank(Integer.parseInt(riga[5])));
+        return s;
+    }
+
+
     public boolean create(Branch branch) {
 
         Bank bank;
@@ -87,4 +107,5 @@ public class BranchDAO {
 
 
     }
+
 }

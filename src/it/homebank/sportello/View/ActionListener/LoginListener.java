@@ -2,7 +2,6 @@ package it.homebank.sportello.View.ActionListener;
 
 import it.homebank.sportello.View.Frame;
 import it.homebank.sportello.View.Panel.AllUser.LoginPanel;
-import it.homebank.sportello.View.Panel.UserPanel;
 
 
 import it.homebank.sportello.Business.AdministratorBusiness;
@@ -20,7 +19,6 @@ public class LoginListener implements ActionListener {
 
     private Frame frame;
 
-    public UserPanel utentePnl = new UserPanel();
     public LoginPanel loginPnl = new LoginPanel();
 
 
@@ -42,8 +40,8 @@ public class LoginListener implements ActionListener {
             String username = frame.getLoginPnl().getTextUser().getText();
             String password = frame.getLoginPnl().getTextPassword().getText();
             try {
-                LoginBusiness l = new LoginBusiness();
-                User user = l.login(username, password);
+                LoginBusiness loginBusiness = new LoginBusiness();
+                User user = loginBusiness.login(username, password);
 
 
                 if (user.getAuthorization() == 1) {
@@ -54,12 +52,12 @@ public class LoginListener implements ActionListener {
 
                             int num = administratorBusiness.numPendingRequest();
                             if (num != 0) frame.getAdministratorPnl().getNewCustomerButton().setEnabled(true);
-                            frame.getAdministratorPnl().getNewCustomerButton().setText("new Customer ("+num+ ")");
+                            frame.getAdministratorPnl().getNewCustomerButton().setText("new Customer ("+num+ ")");//il pulsante per le nuove richieste
                             break;
 
                         case (2):
                             frame.getLoginPnl().getLoginPanel().setVisible(false);
-                            //TODO director panel
+                            frame.getDirectorPnl().getDirectonPanel().setVisible(true);
                             break;
                         case (3):
                             frame.getLoginPnl().getLoginPanel().setVisible(false);
@@ -71,7 +69,7 @@ public class LoginListener implements ActionListener {
                             break;
                     }
 
-                } else JOptionPane.showMessageDialog(null, "Attendi che l'amministratore ti autorizzi");
+                } else JOptionPane.showMessageDialog(null, "Attendi che loginBusiness'amministratore ti autorizzi");
 
             } catch (Exception e1) {
                 JOptionPane.showMessageDialog(null, "Credenziali errate. Se non sei ancora cliente, registrati.");

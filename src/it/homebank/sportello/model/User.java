@@ -122,6 +122,7 @@ public class User {
 
     //function
     public boolean registration(User user) { /*questa funzione aggiunge un user senza autorizzazione e di tipo cliente*/
+        if (user.getType() == 0) user.setType(4);
         UserDAO sDAO = new UserDAO();
         return sDAO.getInstance().create(user);
     }
@@ -142,5 +143,12 @@ public class User {
         int i = 0;
         UserDAO sDAO = new UserDAO();
         return sDAO.findbyAuthentication(i);
+    }
+
+    public User findbyUsername(String username) {
+
+        UserDAO sDAO = new UserDAO();
+        return sDAO.findbyUsername(username);
+
     }
 }

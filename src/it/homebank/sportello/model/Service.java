@@ -4,7 +4,7 @@ public class Service {
     private int idService;
     private String name;
     private String description;
-    private int type; //1 se è un investimento, 2 se è a pagamento
+    private int type; //1 se è un investimento, 0 se è a pagamento
     private int interest;
     private String duration;
     Bank bank; /*di quale bank è il service*/
@@ -75,4 +75,5 @@ public class Service {
     public void setType(int type) {
         this.type = type;
     }
+
 }

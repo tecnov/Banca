@@ -1,21 +1,28 @@
 package it.homebank.sportello.model;
 
+import it.homebank.sportello.DAO.ProductDAO;
+
+import java.util.ArrayList;
+
 public class Product {
     private int idProduct;
     private String name;
-    private String description;
-
     private int price;
-
+    private String description;
+    private String variable;
     private Bank bank; /*indica di quale bank è il prodotto*/
 
 
-    public Product(int idProduct, String name, String description, int price, String startDate, String finishDate, Bank bank) {
+    public Product(int idProduct, String name, int price, String description, String variable, Bank bank) {
         this.idProduct = idProduct;
         this.name = name;
-        this.description = description;
         this.price = price;
+        this.description = description;
+        this.variable = variable;
         this.bank = bank;
+    }
+
+    public Product() {
 
     }
 
@@ -59,6 +66,19 @@ public class Product {
         this.price = price;
     }
 
+    public String getVariable() {
+        return variable;
+    }
+
+    public void setVariable(String variable) {
+        this.variable = variable;
+    }
+
+
+    public ArrayList<Product> findbyIdBank(int idBank) {
+        ProductDAO sDAO = new ProductDAO();
+        return sDAO.findbyIdBank(idBank);
+    }
 
 }
 

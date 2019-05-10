@@ -91,10 +91,7 @@ public class UserDAO {
 
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM user WHERE username='" + username + "' AND password='" + password + "'");
 
-        if(result.size() == 0) {
-          //  JOptionPane.showMessageDialog(null, "nessun utente con questo username e password");
-            return null;
-        }
+        if(result.size() == 0) { return null; }
         Branch b = new Branch();
         User s = new User();
         String[] riga = result.get(0);
@@ -105,34 +102,30 @@ public class UserDAO {
         s.setSurname(riga[4]);
         s.setEmail(riga[5]);
         s.setType(Integer.parseInt(riga[6]));
-
         s.setAuthorization(Integer.parseInt(riga[7]));
         s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[8])));
         return s;
     }
 
 
-    public ArrayList<User> findbyUsername(String username) { //TODO va ritestato
+    public User findbyUsername(String username) {
 
-        ArrayList<User> usernames = new ArrayList<User>();
         ArrayList<String[]> result = DbConnection.getInstance().eseguiQuery("SELECT * FROM user WHERE username='" + username + "'");
-        Iterator<String[]> i = result.iterator();
 
-        while(i.hasNext()){ //continua ad incrementare finché non trova l'elemento successivo oppure se l'elemento successivo è un'eccezione
-            String[] riga = i.next();
-            User s = new User();
-            Branch b = new Branch();
-            s.setIdUser(Integer.parseInt(riga[0]));
-            s.setUsername(riga[1]);
-            s.setPassword(riga[2]);
-            s.setName(riga[3]);
-            s.setSurname(riga[4]);
-            s.setEmail(riga[5]);
-            s.setType(Integer.parseInt(riga[6]));
-            s.setAuthorization(Integer.parseInt(riga[7]));
-            s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[8])));
-            usernames.add(s);}
-        return usernames;
+        if(result.size() == 0) { return null; }
+        Branch b = new Branch();
+        User s = new User();
+        String[] riga = result.get(0);
+        s.setIdUser(Integer.parseInt(riga[0]));
+        s.setUsername(riga[1]);
+        s.setPassword(riga[2]);
+        s.setName(riga[3]);
+        s.setSurname(riga[4]);
+        s.setEmail(riga[5]);
+        s.setType(Integer.parseInt(riga[6]));
+        s.setAuthorization(Integer.parseInt(riga[7]));
+        s.setBranchUser(b.findbyIdBranch(Integer.parseInt(riga[8])));
+        return s;
 
     }
 

@@ -4,12 +4,15 @@ public class OperationList {
     private int idOperation;
     private String date;
     private boolean cashierAuthorization;
-    User customer;                          /* il customer che ha effettuato l'operaizone */
-    private Product product;               /*il product acquistato, può essere vuoto se ha fatto un passaggio di soldi */
-    PurchasedService sender;                 /*servizi tra i quali si è passato i soldi...*/
-    PurchasedService recipient;              /*...possono essere vuoti se ha acquistato un product*/
 
-    public OperationList(int idOperation, String date, boolean cashierAuthorization, User customer, Product product, PurchasedService sender, PurchasedService recipient) {
+    User customer;/* il customer che ha effettuato l'operaizone */
+
+    private Product product;               /*il product acquistato, può essere vuoto se ha fatto un passaggio di soldi */
+    int price;
+    PurchasedService sender;                 /*servizio dal quale sono stati presi i soldi o servizi tra i quali si è passato i soldi...*/
+    PurchasedService recipient;              /*...il recipient può essere vuoto se ha acquistato un product*/
+
+    public OperationList(int idOperation, String date, boolean cashierAuthorization, User customer, Product product, int price, PurchasedService sender, PurchasedService recipient) {
         this.idOperation = idOperation;
         this.date = date;
         this.cashierAuthorization = cashierAuthorization;
@@ -73,5 +76,13 @@ public class OperationList {
 
     public void setRecipient(PurchasedService recipient) {
         this.recipient = recipient;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public void setPrice(int price) {
+        this.price = price;
     }
 }

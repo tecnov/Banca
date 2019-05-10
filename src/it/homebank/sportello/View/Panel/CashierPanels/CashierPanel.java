@@ -1,10 +1,10 @@
-package it.homebank.sportello.View.Panel;
+package it.homebank.sportello.View.Panel.CashierPanels;
 
 import javax.swing.*;
 
 public class CashierPanel {
     public JPanel cashierPanel;
-    private JTextField textField1;
+    private JTextField variableField;
     private JLabel idClienteLabel;
     private JButton confirmButton;
     private JButton operationRequestsButton;
@@ -24,12 +24,12 @@ public class CashierPanel {
         this.cashierPanel = cashierPanel;
     }
 
-    public JTextField getTextField1() {
-        return textField1;
+    public JTextField getVariableField() {
+        return variableField;
     }
 
-    public void setTextField1(JTextField textField1) {
-        this.textField1 = textField1;
+    public void setVariableField(JTextField variableField) {
+        this.variableField = variableField;
     }
 
     public JLabel getIdClienteLabel() {

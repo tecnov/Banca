@@ -72,32 +72,58 @@ public class AdministratorListener implements ActionListener, ItemListener {
             String descriptionBank = frame.getNewBankPnl().getDescriptionBankTextField().getText();
             String photoPathBank = frame.getNewBankPnl().getPhotoBankTextField().getText();
 
-            if (!registrationBusiness.checkDuplicateBankName(nameBank))
-                JOptionPane.showMessageDialog(null, "Nome della banca già esistente");
-            else if (nameBank.equals(null)) JOptionPane.showMessageDialog(null, "Inserisci il nome della banca");
-            //TODO aggiungi else if per i campi vuoti anche dopo
-
-            else administratorBusiness.createNewBank(nameBank, addressBank, descriptionBank, photoPathBank);
-
-
             String nameBrach = frame.getNewBankPnl().getBranchNameTextField().getText();
             String addressBranch = frame.getNewBankPnl().getAddressBranchTextField().getText();
             String scheduleBranch = frame.getNewBankPnl().getScheduleTextField().getText();
             String photoBranch = frame.getNewBankPnl().getPhotoBranchTextField().getText();
-            Bank bank =  Bank.findbyName(nameBank);
-            administratorBusiness.createBranchBank(nameBrach, addressBranch, scheduleBranch, photoBranch, bank);
+
 
             String username = frame.getNewBankPnl().getUsernameTextField().getText();
             String password = frame.getNewBankPnl().getPasswordTextField().getText();
             String name = frame.getNewBankPnl().getNameTextField().getText();
             String surname = frame.getNewBankPnl().getSurnameTextField().getText();
             String email = frame.getNewBankPnl().getEmailTextField().getText();
-            Branch branch = Branch.findbyName(nameBrach);
 
-            if (!registrationBusiness.checkDuplicateUsername(username)) {
+            if (!registrationBusiness.checkDuplicateBankName(nameBank))
+                JOptionPane.showMessageDialog(null, "Nome della banca già esistente");
+            else if (nameBank.trim().length() == 0 ||
+            addressBank.trim().length() == 0 || descriptionBank.trim().length() == 0 ||
+            photoPathBank.trim().length() == 0 || nameBrach.trim().length() == 0 || addressBranch.trim().length() == 0 ||
+            scheduleBranch.trim().length() == 0 || photoBranch.trim().length() == 0 || username.trim().length() == 0 ||
+            password.trim().length() == 0 || name.trim().length() == 0 || surname.trim().length() == 0 ||
+            email.trim().length() == 0 )
+                JOptionPane.showMessageDialog(null, "Non puoi lasciare dei campi vuoti o di soli spazi");
+
+
+            else {administratorBusiness.createNewBank(nameBank, addressBank, descriptionBank, photoPathBank);
+
+
+                Bank bank =  administratorBusiness.findBank(nameBank);
+                administratorBusiness.createBranchBank(nameBrach, addressBranch, scheduleBranch, photoBranch, bank);
+
+
+
+                if (!registrationBusiness.checkDuplicateUsername(username)) {
                 JOptionPane.showMessageDialog(null, "Username già esistente");
-            } else {
-                administratorBusiness.newDirector(username, password, name, surname, email, branch);
+                } else {
+                    Branch branch = administratorBusiness.findBranch(nameBrach, nameBank);
+
+                   administratorBusiness.newDirector(username, password, name, surname, email, branch);
+                   JOptionPane.showMessageDialog(null, "Dati inseriti nel database");
+                   frame.getNewBankPnl().getNameBankTextField().setText("");
+                   frame.getNewBankPnl().getAddressBankTextField().setText("");
+                   frame.getNewBankPnl().getDescriptionBankTextField().setText("");
+                   frame.getNewBankPnl().getPhotoBankTextField().setText("");
+                   frame.getNewBankPnl().getBranchNameTextField().setText("");
+                   frame.getNewBankPnl().getAddressBranchTextField().setText("");
+                   frame.getNewBankPnl().getScheduleTextField().setText("");
+                   frame.getNewBankPnl().getPhotoBranchTextField().setText("");
+                   frame.getNewBankPnl().getUsernameTextField().setText("");
+                   frame.getNewBankPnl().getPasswordTextField().setText("");
+                   frame.getNewBankPnl().getNameTextField().setText("");
+                   frame.getNewBankPnl().getSurnameTextField().setText("");
+                   frame.getNewBankPnl().getEmailTextField().setText("");
+                }
             }
         }//conferma nuova banca con direttore e prima filiale
 

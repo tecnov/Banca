@@ -41,12 +41,14 @@ public class RegistrationListener implements ActionListener, ItemListener {
             String name = frame.getRegistrationPnl().getNameField().getText();
             String surname = frame.getRegistrationPnl().getSurnameField().getText();
             String email = frame.getRegistrationPnl().getEmailField().getText();
-            String branchString = (String) frame.getRegistrationPnl().getBranchComboBox().getSelectedItem();
+            String bankNameString = (String) frame.getRegistrationPnl().getBankComboBox().getSelectedItem();
+            String branchNameString = (String) frame.getRegistrationPnl().getBranchComboBox().getSelectedItem();
+
             if (registrationBusiness.checkDuplicateUsername(username) == false) {
                 JOptionPane.showMessageDialog(null, "Username già esistente");
             } else {
-                Branch branch = registrationBusiness.findBranchbyName(branchString);
-                registrationBusiness.userRegistration(name, surname, username, password, email, branch);
+                Branch branch = registrationBusiness.findBranch(branchNameString, bankNameString);
+                registrationBusiness.userRegistration(username, password, name, surname, email, branch);
                 JOptionPane.showMessageDialog(null, "La sua richiesta verrà analizzata dall'amministratore");
 
             }
@@ -67,13 +69,15 @@ public class RegistrationListener implements ActionListener, ItemListener {
 
             String bankName = (String) frame.getRegistrationPnl().getBankComboBox().getSelectedItem();
             Branch s = new Branch();
-            Bank b = Bank.findbyName(bankName);
-            ArrayList<Branch> branches = s.findbyIdBank(b.getIdBank());
+            Bank b = registrationBusiness.findBank(bankName);
+
+            if (s!=null && b!=null){
+            ArrayList<Branch> branches = registrationBusiness.findBranchs(b.getIdBank());
             frame.getRegistrationPnl().getBranchComboBox().removeAllItems();
             frame.getRegistrationPnl().getBranchComboBox().addItem(null);
             for (int i = 0; i < branches.size(); i++) {
                 frame.getRegistrationPnl().getBranchComboBox().addItem(branches.get(i).getName());
-            }
+            }}
         }
 
     }

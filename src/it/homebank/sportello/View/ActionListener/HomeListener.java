@@ -30,9 +30,13 @@ public class HomeListener implements ActionListener {
 
 
         if (sorgenteEvento.equals(REGISTRATION)) {
-            frame.getHomePnl().getAllBank().removeAllItems();
+
+            RegistrationBusiness registrationBusiness = new RegistrationBusiness();
+            frame.getRegistrationPnl().getBankComboBox().removeAllItems();
+            frame.getRegistrationPnl().getBranchComboBox().removeAllItems();
+
             Bank bank = new Bank();
-            ArrayList<Bank> banks = bank.findAll();
+            ArrayList<Bank> banks = registrationBusiness.findAllBanks();
             frame.getRegistrationPnl().getBankComboBox().addItem(null);
             for (int i = 0; i < banks.size(); i++) {
                 frame.getRegistrationPnl().getBankComboBox().addItem(banks.get(i).getName());

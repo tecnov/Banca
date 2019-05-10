@@ -72,4 +72,17 @@ public class AdministratorBusiness {
         User s = new User();
         return s.authorization(user, confirm);
     }
+    public Branch findBranch(String nameBranch, String nameBank) {
+        Branch b = new Branch();
+        Bank bb = new Bank();
+        bb = bb.findbyName(nameBank);
+
+        return b.findbyIdBankandBranchName(nameBranch, bb.getIdBank());
+
+    }
+
+    public Bank findBank(String nameBank) {
+        Bank b = new Bank();
+        return b.findbyName(nameBank);
+    }
 }

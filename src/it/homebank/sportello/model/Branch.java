@@ -97,4 +97,10 @@ public class Branch {
         BranchDAO sDAO = new BranchDAO();
         return sDAO.getInstance().create(branch);
     }
+
+    public Branch findbyIdBankandBranchName(String nameBranch, int idBank) {
+        BranchDAO sDAO = new BranchDAO();
+        return sDAO.findbyIdBankandBranchName(nameBranch, idBank);
+
+    }
 }

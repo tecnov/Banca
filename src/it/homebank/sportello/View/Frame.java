@@ -1,27 +1,43 @@
 package it.homebank.sportello.View;
 
 import it.homebank.sportello.View.ActionListener.*;
-import it.homebank.sportello.View.Panel.*;
 import it.homebank.sportello.View.Panel.AdministratorPanels.AdministratorPanel;
 import it.homebank.sportello.View.Panel.AdministratorPanels.NewBankPanel;
 import it.homebank.sportello.View.Panel.AdministratorPanels.PendingRequestPanel;
 import it.homebank.sportello.View.Panel.AllUser.HomePanel;
 import it.homebank.sportello.View.Panel.AllUser.LoginPanel;
 import it.homebank.sportello.View.Panel.AllUser.RegistrationPanel;
+import it.homebank.sportello.View.Panel.CashierPanels.CashierPanel;
+import it.homebank.sportello.View.Panel.CustomerPanels.CustomerPanel;
+import it.homebank.sportello.View.Panel.DirectorPanels.DirectorPanel;
+import it.homebank.sportello.View.Panel.DirectorPanels.ProductDirPanel;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class Frame extends JFrame {
 
+    //all user panels
     LoginPanel loginPnl = new LoginPanel();
     RegistrationPanel registrationPnl = new RegistrationPanel();
-    AdministratorPanel administratorPnl = new AdministratorPanel();
-    CashierPanel cashierPnl = new CashierPanel();
-    CustomerPanel customerPnl = new CustomerPanel();
-    PendingRequestPanel pendingRequestPnl = new PendingRequestPanel();
     HomePanel homePnl = new HomePanel();
+
+
+    //administrator panels
+    AdministratorPanel administratorPnl = new AdministratorPanel();
+    PendingRequestPanel pendingRequestPnl = new PendingRequestPanel();
     NewBankPanel newBankPnl = new NewBankPanel();
+
+    //director panels
+    DirectorPanel directorPnl = new DirectorPanel();
+    ProductDirPanel productDirPnl = new ProductDirPanel();
+
+
+    CashierPanel cashierPnl = new CashierPanel();
+
+
+    CustomerPanel customerPnl = new CustomerPanel();
+
 
     /**
      * Serve a costruire l'interfaccia
@@ -41,15 +57,24 @@ public class Frame extends JFrame {
         view.setLocation(35,25);
         rootPanel.setLayout(new BorderLayout());
 
-        // add all panel
+        // add all panels
 
+        //all user panels
         centroPnl.add(loginPnl.getLoginPanel());
         centroPnl.add(registrationPnl.getRegistrationPanel());
-        centroPnl.add(administratorPnl.getAdministratorPanel());
-        centroPnl.add(cashierPnl.getCashierPanel());
         centroPnl.add(homePnl.getHomePanel());
+
+        //adminstrator panels
+        centroPnl.add(administratorPnl.getAdministratorPanel());
         centroPnl.add(newBankPnl.getNewBankPanel());
         centroPnl.add(pendingRequestPnl.getPendingRequestPanel());
+
+        //director panels
+        centroPnl.add(directorPnl.getDirectonPanel());
+        centroPnl.add(productDirPnl.getProductDirPanel());
+
+        centroPnl.add(cashierPnl.getCashierPanel());
+        centroPnl.add(productDirPnl.getProductDirPanel());
 
 
 
@@ -73,7 +98,9 @@ public class Frame extends JFrame {
         RegistrationListener registrationListener = new RegistrationListener(this);
         HomeListener homeListener = new HomeListener(this);
         AdministratorListener administratorListener = new AdministratorListener(this);
+        DirectorListener directorListener = new DirectorListener(this);
 
+        //all users listener
         loginPnl.getLogButton().addActionListener(loginListener);
         loginPnl.getLogButton().setActionCommand(loginListener.LOGIN);
         loginPnl.getBackButton().addActionListener(loginListener);
@@ -87,6 +114,8 @@ public class Frame extends JFrame {
         homePnl.getLoginButton().setActionCommand(homeListener.LOGIN);
         homePnl.getRegistrationButton().addActionListener(homeListener);
         homePnl.getRegistrationButton().setActionCommand(homeListener.REGISTRATION);
+
+        //administrator listener
         administratorPnl.getAddNewBankButton().addActionListener(administratorListener);
         administratorPnl.getAddNewBankButton().setActionCommand(administratorListener.NEW_BANK_PANEL);
         administratorPnl.getNewCustomerButton().addActionListener(administratorListener);
@@ -102,6 +131,29 @@ public class Frame extends JFrame {
         pendingRequestPnl.getDenyButton().setActionCommand(administratorListener.DENY_NEW_CUSTOMER);
         pendingRequestPnl.getBackButton().addActionListener(administratorListener);
         pendingRequestPnl.getBackButton().setActionCommand(administratorListener.BACK_FROM_REQUEST_TO_HOME);
+
+        //director listner
+        directorPnl.getLogOutButton().addActionListener(directorListener);
+        directorPnl.getLogOutButton().setActionCommand(directorListener.LOG_OUT);
+        directorPnl.getNewBranchButton().addActionListener(directorListener);
+        directorPnl.getNewBranchButton().setActionCommand(directorListener.NEW_BRANCH);
+        directorPnl.getServicesButton().addActionListener(directorListener);
+        directorPnl.getServicesButton().setActionCommand(directorListener.SERVICES);
+        directorPnl.getProductsButton().addActionListener(directorListener);
+        directorPnl.getProductsButton().setActionCommand(directorListener.PRODUCTS);
+        productDirPnl.getConfirmNewProductButton().addActionListener(directorListener);
+        productDirPnl.getConfirmNewProductButton().setActionCommand(directorListener.CONFIRM_NEW_PRODUCT);
+        productDirPnl.getDeleteProductButton().addActionListener(directorListener);
+        productDirPnl.getDeleteProductButton().setActionCommand(directorListener.DELETE_PRODUCT);
+        productDirPnl.getProductsComboBox().addItemListener(directorListener);
+        productDirPnl.getBackButton().addActionListener(directorListener);
+        productDirPnl.getBackButton().setActionCommand(directorListener.BACK_FROM_PRODUCTS_TO_HOME);
+
+
+
+
+
+
     }
 
 
@@ -182,4 +234,19 @@ public class Frame extends JFrame {
         this.newBankPnl = newBankPnl;
     }
 
+    public DirectorPanel getDirectorPnl() {
+        return directorPnl;
+    }
+
+    public void setDirectorPnl(DirectorPanel directorPnl) {
+        this.directorPnl = directorPnl;
+    }
+
+    public ProductDirPanel getProductDirPnl() {
+        return productDirPnl;
+    }
+
+    public void setProductDirPnl(ProductDirPanel productDirPnl) {
+        this.productDirPnl = productDirPnl;
+    }
 }

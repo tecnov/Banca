@@ -1,8 +1,7 @@
 package it.homebank.sportello.Business;
 
-import it.homebank.sportello.DAO.BankDAO;
 import it.homebank.sportello.DAO.BranchDAO;
-import it.homebank.sportello.DAO.UserDAO;
+import it.homebank.sportello.model.Bank;
 import it.homebank.sportello.model.Branch;
 import it.homebank.sportello.model.User;
 
@@ -26,7 +25,7 @@ public class RegistrationBusiness {
     }
 
 
-
+    //sbagliato
     public Branch findBranchbyName(String branch){
 
         BranchDAO sDAO = new BranchDAO();
@@ -36,18 +35,42 @@ public class RegistrationBusiness {
 
     public boolean checkDuplicateUsername(String username) {
 
-        UserDAO sDAO = new UserDAO();
-        ArrayList a = sDAO.findbyUsername(username);
-        if(a.size() == 0) return true;
+        User u = new User();
+
+        if(u.findbyUsername(username) ==  null) return true;
         else return false;
     }
 
     public boolean checkDuplicateBankName(String name) {
 
-        BankDAO sDAO = new BankDAO();
-        ArrayList a = sDAO.checkDuplicateName(name);
-        if(a.size() == 0) return true;
+        Bank b = new Bank();
+
+        if(b.findbyName(name) == null) return true;
         else return false;
+    }
+
+    public Branch findBranch(String nameBranch, String nameBank) {
+        Branch b = new Branch();
+        Bank bb = new Bank();
+        bb = bb.findbyName(nameBank);
+
+        return b.findbyIdBankandBranchName(nameBranch, bb.getIdBank());
+
+    }
+
+    public ArrayList<Branch> findBranchs(int idBank) {
+        Branch b = new Branch();
+        return b.findbyIdBank(idBank);
+    }
+
+    public Bank findBank(String bankName) {
+        Bank b = new Bank();
+        return b.findbyName(bankName);
+    }
+
+    public ArrayList<Bank> findAllBanks() {
+        Bank b = new Bank();
+        return b.findAll();
     }
 }
 
